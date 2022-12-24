@@ -611,15 +611,25 @@ SELECT DISTINCT language.name FROM language INNER JOIN film ON language.language
 
 
 <details>
-  <summary>Question 7 : </summary>
+  <summary>Question 7 : The film ALONE TRIP (id:17) was actually released in Mandarin, update the info</summary>
   
   ## QUERY : 
 ``` 
+ UPDATE film SET film.language_id=(SELECT language_id from language WHERE language.name='Mandarin') WHERE film_id=17;
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
+mysql> select * from film where film_id=17;
++---------+------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------+---------------------+
+| film_id | title      | description                                                                                           | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features           | last_update         |
++---------+------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------+---------------------+
+|      17 | ALONE TRIP | A Fast-Paced Character Study of a Composer And a Dog who must Outgun a Boat in An Abandoned Fun House |         2016 |           4 |                 NULL |               3 |        0.99 |     82 |            14.99 | R      | Trailers,Behind the Scenes | 2022-12-24 12:06:16 |
++---------+------------+-------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------+---------------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
