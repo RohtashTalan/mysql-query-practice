@@ -636,45 +636,478 @@ mysql> select * from film where film_id=17;
 
 
 <details>
-  <summary>Question 8 : </summary>
+  <summary>Question 8 : Fetch cast details of films released during 2005 and 2015 with PG rating</summary>
   
   ## QUERY : 
 ``` 
+   SELECT CONCAT(actor.first_name, ' ',actor.last_name) AS Actor_Name, film.title AS Film_Name, film.release_year, film.rating FROM actor INNER JOIN film_actor ON film_actor.actor_id=actor.actor_id INNER JOIN film ON film.film_id=film_actor.film_id WHERE rating='PG' AND release_year BETWEEN 2005 AND 2015 ORDER BY film.release_year;
+
 ```
 
 ## RESULT 
 ```
-
++----------------------+------------------------+--------------+--------+
+| Actor_Name           | Film_Name              | release_year | rating |
++----------------------+------------------------+--------------+--------+
+| FRANCES DAY-LEWIS    | BRINGING HYSTERICAL    |         2005 | PG     |
+| ANGELA WITHERSPOON   | BRINGING HYSTERICAL    |         2005 | PG     |
+| RIP CRAWFORD         | BUCKET BROTHERHOOD     |         2005 | PG     |
+| TIM HACKMAN          | BUCKET BROTHERHOOD     |         2005 | PG     |
+| GARY PHOENIX         | BUCKET BROTHERHOOD     |         2005 | PG     |
+| CHARLIZE DENCH       | BUCKET BROTHERHOOD     |         2005 | PG     |
+| KIRSTEN AKROYD       | BUCKET BROTHERHOOD     |         2005 | PG     |
+| BURT TEMPLE          | BUCKET BROTHERHOOD     |         2005 | PG     |
+| JULIA MCQUEEN        | EFFECT GLADIATOR       |         2007 | PG     |
+| ALEC WAYNE           | EFFECT GLADIATOR       |         2007 | PG     |
+| NICK STALLONE        | EFFECT GLADIATOR       |         2007 | PG     |
+| JULIA BARRYMORE      | EFFECT GLADIATOR       |         2007 | PG     |
+| RENEE TRACY          | EFFECT GLADIATOR       |         2007 | PG     |
+| OLYMPIA PFEIFFER     | EFFECT GLADIATOR       |         2007 | PG     |
+| LISA MONROE          | EFFECT GLADIATOR       |         2007 | PG     |
+| LUCILLE TRACY        | EGG IGBY               |         2007 | PG     |
+| TOM MCKELLEN         | EGG IGBY               |         2007 | PG     |
+| NATALIE HOPKINS      | EGG IGBY               |         2007 | PG     |
+| MERYL GIBSON         | EGG IGBY               |         2007 | PG     |
+| OPRAH KILMER         | EGG IGBY               |         2007 | PG     |
+| WARREN NOLTE         | POTTER CONNECTICUT     |         2007 | PG     |
+| WARREN JACKMAN       | POTTER CONNECTICUT     |         2007 | PG     |
+| CATE MCQUEEN         | POTTER CONNECTICUT     |         2007 | PG     |
+| JANE JACKMAN         | POTTER CONNECTICUT     |         2007 | PG     |
+| WHOOPI HURT          | POTTER CONNECTICUT     |         2007 | PG     |
+| AL GARLAND           | POTTER CONNECTICUT     |         2007 | PG     |
+| AUDREY BAILEY        | POTTER CONNECTICUT     |         2007 | PG     |
+| CUBA OLIVIER         | EGYPT TENENBAUMS       |         2007 | PG     |
+| GARY PENN            | EGYPT TENENBAUMS       |         2007 | PG     |
+| KENNETH TORN         | EGYPT TENENBAUMS       |         2007 | PG     |
+| SUSAN DAVIS          | EGYPT TENENBAUMS       |         2007 | PG     |
+| CHRIS DEPP           | EGYPT TENENBAUMS       |         2007 | PG     |
+| GOLDIE BRODY         | EVERYONE CRAFT         |         2007 | PG     |
+| MICHELLE MCCONAUGHEY | EVERYONE CRAFT         |         2007 | PG     |
+| WOODY JOLIE          | EVERYONE CRAFT         |         2007 | PG     |
+| JAMES PITT           | EVERYONE CRAFT         |         2007 | PG     |
+| MINNIE ZELLWEGER     | EVERYONE CRAFT         |         2007 | PG     |
+| GRACE MOSTEL         | OPEN AFRICAN           |         2007 | PG     |
+| JULIA MCQUEEN        | OPEN AFRICAN           |         2007 | PG     |
+| SISSY SOBIESKI       | OPEN AFRICAN           |         2007 | PG     |
+| JUDE CRUISE          | OPEN AFRICAN           |         2007 | PG     |
+| MILLA KEITEL         | OPEN AFRICAN           |         2007 | PG     |
+| GINA DEGENERES       | OPEN AFRICAN           |         2007 | PG     |
+| ADAM HOPPER          | OPEN AFRICAN           |         2007 | PG     |
+| VIVIEN BASINGER      | OPEN AFRICAN           |         2007 | PG     |
+| JULIA ZELLWEGER      | OPEN AFRICAN           |         2007 | PG     |
+| ZERO CAGE            | OLEANDER CLUE          |         2007 | PG     |
+| SANDRA KILMER        | OLEANDER CLUE          |         2007 | PG     |
+| PENELOPE PINKETT     | OLEANDER CLUE          |         2007 | PG     |
+| SEAN WILLIAMS        | OLEANDER CLUE          |         2007 | PG     |
+| GREG CHAPLIN         | OLEANDER CLUE          |         2007 | PG     |
+| JIM MOSTEL           | OLEANDER CLUE          |         2007 | PG     |
+| WARREN JACKMAN       | OLEANDER CLUE          |         2007 | PG     |
+| EWAN GOODING         | OLEANDER CLUE          |         2007 | PG     |
+| OPRAH KILMER         | OLEANDER CLUE          |         2007 | PG     |
+| RUSSELL CLOSE        | OLEANDER CLUE          |         2007 | PG     |
+| PENELOPE GUINESS     | OKLAHOMA JUMANJI       |         2007 | PG     |
+| JENNIFER DAVIS       | OKLAHOMA JUMANJI       |         2007 | PG     |
+| KARL BERRY           | OKLAHOMA JUMANJI       |         2007 | PG     |
+| CUBA OLIVIER         | OKLAHOMA JUMANJI       |         2007 | PG     |
+| RIP CRAWFORD         | OKLAHOMA JUMANJI       |         2007 | PG     |
+| CHRISTIAN AKROYD     | OKLAHOMA JUMANJI       |         2007 | PG     |
+| CARY MCCONAUGHEY     | OKLAHOMA JUMANJI       |         2007 | PG     |
+| RICHARD PENN         | OKLAHOMA JUMANJI       |         2007 | PG     |
+| BELA WALKEN          | OKLAHOMA JUMANJI       |         2007 | PG     |
+| FRANCES DAY-LEWIS    | OTHERS SOUP            |         2007 | PG     |
+| NATALIE HOPKINS      | OTHERS SOUP            |         2007 | PG     |
+| BURT POSEY           | OTHERS SOUP            |         2007 | PG     |
+| OLYMPIA PFEIFFER     | OTHERS SOUP            |         2007 | PG     |
+| GOLDIE BRODY         | POLLOCK DELIVERANCE    |         2007 | PG     |
+| CARMEN HUNT          | POLLOCK DELIVERANCE    |         2007 | PG     |
+| DUSTIN TAUTOU        | POLLOCK DELIVERANCE    |         2007 | PG     |
+| GROUCHO SINATRA      | POLLOCK DELIVERANCE    |         2007 | PG     |
+| BURT TEMPLE          | POLLOCK DELIVERANCE    |         2007 | PG     |
+| JULIA FAWCETT        | POLLOCK DELIVERANCE    |         2007 | PG     |
+| VIVIEN BERGEN        | POLISH BROOKLYN        |         2007 | PG     |
+| ELVIS MARX           | POLISH BROOKLYN        |         2007 | PG     |
+| KEVIN BLOOM          | POLISH BROOKLYN        |         2007 | PG     |
+| RIP CRAWFORD         | POLISH BROOKLYN        |         2007 | PG     |
+| JAYNE NEESON         | POLISH BROOKLYN        |         2007 | PG     |
+| RALPH CRUZ           | POLISH BROOKLYN        |         2007 | PG     |
+| MORGAN WILLIAMS      | POLISH BROOKLYN        |         2007 | PG     |
+| FAY WINSLET          | POLISH BROOKLYN        |         2007 | PG     |
+| IAN TANDY            | POLISH BROOKLYN        |         2007 | PG     |
+| ALAN DREYFUSS        | POLISH BROOKLYN        |         2007 | PG     |
+| HUMPHREY WILLIS      | PIRATES ROXANNE        |         2007 | PG     |
+| KIRSTEN PALTROW      | PINOCCHIO SIMON        |         2007 | PG     |
+| REESE KILMER         | PINOCCHIO SIMON        |         2007 | PG     |
+| RALPH CRUZ           | PINOCCHIO SIMON        |         2007 | PG     |
+| ELLEN PRESLEY        | PINOCCHIO SIMON        |         2007 | PG     |
+| CAMERON ZELLWEGER    | PINOCCHIO SIMON        |         2007 | PG     |
+| MORGAN HOPKINS       | PINOCCHIO SIMON        |         2007 | PG     |
+| RIVER DEAN           | PINOCCHIO SIMON        |         2007 | PG     |
+| BEN HARRIS           | PINOCCHIO SIMON        |         2007 | PG     |
+| MERYL GIBSON         | PINOCCHIO SIMON        |         2007 | PG     |
+| LAURA BRODY          | PINOCCHIO SIMON        |         2007 | PG     |
+| JOHN SUVARI          | PINOCCHIO SIMON        |         2007 | PG     |
+| JULIA MCQUEEN        | PILOT HOOSIERS         |         2007 | PG     |
+| WOODY HOFFMAN        | PILOT HOOSIERS         |         2007 | PG     |
+| HENRY BERRY          | PILOT HOOSIERS         |         2007 | PG     |
+| SPENCER PECK         | PILOT HOOSIERS         |         2007 | PG     |
+| CAMERON ZELLWEGER    | PILOT HOOSIERS         |         2007 | PG     |
+| DEBBIE AKROYD        | PILOT HOOSIERS         |         2007 | PG     |
+| AUDREY BAILEY        | PILOT HOOSIERS         |         2007 | PG     |
+| JODIE DEGENERES      | PET HAUNTING           |         2007 | PG     |
+| GROUCHO SINATRA      | PET HAUNTING           |         2007 | PG     |
+| MORGAN HOPKINS       | PET HAUNTING           |         2007 | PG     |
+| BEN HARRIS           | PET HAUNTING           |         2007 | PG     |
+| LAURA BRODY          | PET HAUNTING           |         2007 | PG     |
+| NICK DEGENERES       | PET HAUNTING           |         2007 | PG     |
+| JOHN SUVARI          | PET HAUNTING           |         2007 | PG     |
+| BOB FAWCETT          | PELICAN COMFORTS       |         2007 | PG     |
+| JULIA BARRYMORE      | PELICAN COMFORTS       |         2007 | PG     |
+| GROUCHO SINATRA      | PELICAN COMFORTS       |         2007 | PG     |
+| WHOOPI HURT          | PELICAN COMFORTS       |         2007 | PG     |
+| RUSSELL TEMPLE       | PELICAN COMFORTS       |         2007 | PG     |
+| AUDREY OLIVIER       | PEAK FOREVER           |         2007 | PG     |
+| KENNETH PESCI        | PEAK FOREVER           |         2007 | PG     |
+| ANGELA WITHERSPOON   | PEAK FOREVER           |         2007 | PG     |
+| DEBBIE AKROYD        | PEAK FOREVER           |         2007 | PG     |
+| GREGORY GOODING      | PEAK FOREVER           |         2007 | PG     |
+| JOHNNY LOLLOBRIGIDA  | PATTON INTERVIEW       |         2007 | PG     |
+| TOM MIRANDA          | PATTON INTERVIEW       |         2007 | PG     |
+| HENRY BERRY          | PATTON INTERVIEW       |         2007 | PG     |
+| RIP WINSLET          | PATTON INTERVIEW       |         2007 | PG     |
+| SEAN WILLIAMS        | PATTON INTERVIEW       |         2007 | PG     |
+| CATE MCQUEEN         | PATTON INTERVIEW       |         2007 | PG     |
+| WHOOPI HURT          | PATTON INTERVIEW       |         2007 | PG     |
+| GEOFFREY HESTON      | PATTON INTERVIEW       |         2007 | PG     |
+| MICHAEL BOLGER       | PATTON INTERVIEW       |         2007 | PG     |
+| CARMEN HUNT          | PATRIOT ROMAN          |         2007 | PG     |
+| ALBERT NOLTE         | PATRIOT ROMAN          |         2007 | PG     |
+| KIM ALLEN            | PATRIOT ROMAN          |         2007 | PG     |
+| RENEE BALL           | PATRIOT ROMAN          |         2007 | PG     |
+| VAL BOLGER           | PATHS CONTROL          |         2007 | PG     |
+| ANNE CRONYN          | PATHS CONTROL          |         2007 | PG     |
+| KIRSTEN AKROYD       | PATHS CONTROL          |         2007 | PG     |
+| SUSAN DAVIS          | PATHS CONTROL          |         2007 | PG     |
+| ROCK DUKAKIS         | PATHS CONTROL          |         2007 | PG     |
+| RIVER DEAN           | PARTY KNOCK            |         2007 | PG     |
+| CHRIS DEPP           | PARTY KNOCK            |         2007 | PG     |
+| MEG HAWKE            | PAPI NECKLACE          |         2007 | PG     |
+| MORGAN HOPKINS       | PAPI NECKLACE          |         2007 | PG     |
+| CUBA ALLEN           | PAPI NECKLACE          |         2007 | PG     |
+| BOB FAWCETT          | OSCAR GOLD             |         2007 | PG     |
+| RIP CRAWFORD         | OSCAR GOLD             |         2007 | PG     |
+| DUSTIN TAUTOU        | OSCAR GOLD             |         2007 | PG     |
+| ELLEN PRESLEY        | OSCAR GOLD             |         2007 | PG     |
+| HARVEY HOPE          | OSCAR GOLD             |         2007 | PG     |
+| AL GARLAND           | OSCAR GOLD             |         2007 | PG     |
+| CHRISTIAN NEESON     | OPPOSITE NECKLACE      |         2007 | PG     |
+| MATTHEW LEIGH        | OPPOSITE NECKLACE      |         2007 | PG     |
+| GROUCHO DUNST        | OPPOSITE NECKLACE      |         2007 | PG     |
+| LUCILLE DEE          | OPPOSITE NECKLACE      |         2007 | PG     |
+| GROUCHO WILLIAMS     | OPPOSITE NECKLACE      |         2007 | PG     |
+| DEBBIE AKROYD        | OPPOSITE NECKLACE      |         2007 | PG     |
+| GROUCHO SINATRA      | DYING MAKER            |         2007 | PG     |
+| MICHAEL BOLGER       | DYING MAKER            |         2007 | PG     |
+| KIRK JOVOVICH        | RUSH GOODFELLAS        |         2011 | PG     |
+| MAE HOFFMAN          | RUSH GOODFELLAS        |         2011 | PG     |
+| SYLVESTER DERN       | RUSH GOODFELLAS        |         2011 | PG     |
+| ANGELA WITHERSPOON   | RUSH GOODFELLAS        |         2011 | PG     |
+| ALAN DREYFUSS        | RUSH GOODFELLAS        |         2011 | PG     |
+| KEVIN BLOOM          | SABRINA MIDNIGHT       |         2011 | PG     |
+| CHRISTIAN AKROYD     | SABRINA MIDNIGHT       |         2011 | PG     |
+| MEG HAWKE            | SABRINA MIDNIGHT       |         2011 | PG     |
+| CHRIS DEPP           | SABRINA MIDNIGHT       |         2011 | PG     |
+| LUCILLE TRACY        | BEDAZZLED MARRIED      |         2011 | PG     |
+| GARY PHOENIX         | BEDAZZLED MARRIED      |         2011 | PG     |
+| DAN HARRIS           | BEDAZZLED MARRIED      |         2011 | PG     |
+| PENELOPE MONROE      | BEDAZZLED MARRIED      |         2011 | PG     |
+| JAYNE NOLTE          | BEDAZZLED MARRIED      |         2011 | PG     |
+| LAURENCE BULLOCK     | BEDAZZLED MARRIED      |         2011 | PG     |
+| REESE WEST           | BEDAZZLED MARRIED      |         2011 | PG     |
+| TIM HACKMAN          | BEHAVIOR RUNAWAY       |         2011 | PG     |
+| REESE KILMER         | BEHAVIOR RUNAWAY       |         2011 | PG     |
+| DARYL WAHLBERG       | BEHAVIOR RUNAWAY       |         2011 | PG     |
+| RITA REYNOLDS        | BEHAVIOR RUNAWAY       |         2011 | PG     |
+| ED GUINESS           | BEHAVIOR RUNAWAY       |         2011 | PG     |
+| DUSTIN TAUTOU        | BILL OTHERS            |         2011 | PG     |
+| MINNIE ZELLWEGER     | BILL OTHERS            |         2011 | PG     |
+| CHRIS BRIDGES        | BILL OTHERS            |         2011 | PG     |
+| RUSSELL TEMPLE       | BILL OTHERS            |         2011 | PG     |
+| AL GARLAND           | BILL OTHERS            |         2011 | PG     |
+| LAURENCE BULLOCK     | BILL OTHERS            |         2011 | PG     |
+| JOE SWANK            | BIRCH ANTITRUST        |         2011 | PG     |
+| WOODY HOFFMAN        | BIRCH ANTITRUST        |         2011 | PG     |
+| DARYL WAHLBERG       | BIRCH ANTITRUST        |         2011 | PG     |
+| EWAN GOODING         | BIRCH ANTITRUST        |         2011 | PG     |
+| ALAN DREYFUSS        | BIRCH ANTITRUST        |         2011 | PG     |
+| MATTHEW CARREY       | BIRCH ANTITRUST        |         2011 | PG     |
+| SANDRA KILMER        | BLACKOUT PRIVATE       |         2011 | PG     |
+| CARY MCCONAUGHEY     | BLACKOUT PRIVATE       |         2011 | PG     |
+| CAMERON ZELLWEGER    | BLACKOUT PRIVATE       |         2011 | PG     |
+| KENNETH HOFFMAN      | BLACKOUT PRIVATE       |         2011 | PG     |
+| MATTHEW CARREY       | BLACKOUT PRIVATE       |         2011 | PG     |
+| MARY TANDY           | QUEEN LUKE             |         2011 | PG     |
+| RIP WINSLET          | QUEEN LUKE             |         2011 | PG     |
+| SPENCER PECK         | QUEEN LUKE             |         2011 | PG     |
+| EWAN GOODING         | QUEEN LUKE             |         2011 | PG     |
+| RIVER DEAN           | QUEEN LUKE             |         2011 | PG     |
+| JAYNE SILVERSTONE    | QUEEN LUKE             |         2011 | PG     |
+| JULIA MCQUEEN        | PRESIDENT BANG         |         2011 | PG     |
+| CUBA ALLEN           | PRESIDENT BANG         |         2011 | PG     |
+| LUCILLE DEE          | PRESIDENT BANG         |         2011 | PG     |
+| DEBBIE AKROYD        | PRESIDENT BANG         |         2011 | PG     |
+| AUDREY BAILEY        | PRESIDENT BANG         |         2011 | PG     |
+| NICK STALLONE        | PRIVATE DROP           |         2011 | PG     |
+| KIRSTEN AKROYD       | PRIVATE DROP           |         2011 | PG     |
+| ELLEN PRESLEY        | PRIVATE DROP           |         2011 | PG     |
+| CAMERON ZELLWEGER    | PRIVATE DROP           |         2011 | PG     |
+| JON CHASE            | PRIVATE DROP           |         2011 | PG     |
+| CHRISTIAN GABLE      | PUNK DIVORCE           |         2011 | PG     |
+| GOLDIE BRODY         | PUNK DIVORCE           |         2011 | PG     |
+| CHRISTIAN NEESON     | PUNK DIVORCE           |         2011 | PG     |
+| JAMES PITT           | PUNK DIVORCE           |         2011 | PG     |
+| HARRISON BALE        | PUNK DIVORCE           |         2011 | PG     |
+| MORGAN WILLIAMS      | PUNK DIVORCE           |         2011 | PG     |
+| GEOFFREY HESTON      | PUNK DIVORCE           |         2011 | PG     |
+| TOM MIRANDA          | RAINBOW SHOCK          |         2011 | PG     |
+| DUSTIN TAUTOU        | RAINBOW SHOCK          |         2011 | PG     |
+| KENNETH TORN         | RAINBOW SHOCK          |         2011 | PG     |
+| JANE JACKMAN         | RAINBOW SHOCK          |         2011 | PG     |
+| KIM ALLEN            | RAINBOW SHOCK          |         2011 | PG     |
+| GRETA MALDEN         | RAINBOW SHOCK          |         2011 | PG     |
+| RIP CRAWFORD         | RANGE MOONWALKER       |         2011 | PG     |
+| BURT DUKAKIS         | RANGE MOONWALKER       |         2011 | PG     |
+| PENELOPE MONROE      | RANGE MOONWALKER       |         2011 | PG     |
+| RUSSELL CLOSE        | RANGE MOONWALKER       |         2011 | PG     |
+| JAYNE NEESON         | RECORDS ZORRO          |         2011 | PG     |
+| BEN WILLIS           | RECORDS ZORRO          |         2011 | PG     |
+| MORGAN HOPKINS       | RECORDS ZORRO          |         2011 | PG     |
+| RITA REYNOLDS        | RECORDS ZORRO          |         2011 | PG     |
+| EWAN GOODING         | RECORDS ZORRO          |         2011 | PG     |
+| CHRISTOPHER WEST     | RECORDS ZORRO          |         2011 | PG     |
+| WILLIAM HACKMAN      | RECORDS ZORRO          |         2011 | PG     |
+| MERYL ALLEN          | RECORDS ZORRO          |         2011 | PG     |
+| MENA TEMPLE          | RESURRECTION SILVERADO |         2011 | PG     |
+| MAE HOFFMAN          | RESURRECTION SILVERADO |         2011 | PG     |
+| KEVIN GARLAND        | RESURRECTION SILVERADO |         2011 | PG     |
+| RICHARD PENN         | RESURRECTION SILVERADO |         2011 | PG     |
+| KENNETH HOFFMAN      | RESURRECTION SILVERADO |         2011 | PG     |
+| UMA WOOD             | RIDER CADDYSHACK       |         2011 | PG     |
+| ANNE CRONYN          | RIDER CADDYSHACK       |         2011 | PG     |
+| SCARLETT DAMON       | RIDER CADDYSHACK       |         2011 | PG     |
+| JAMES PITT           | RIDER CADDYSHACK       |         2011 | PG     |
+| WHOOPI HURT          | RIDER CADDYSHACK       |         2011 | PG     |
+| BEN HARRIS           | RIDER CADDYSHACK       |         2011 | PG     |
+| WILLIAM HACKMAN      | RIDER CADDYSHACK       |         2011 | PG     |
+| JEFF SILVERSTONE     | RIDER CADDYSHACK       |         2011 | PG     |
+| JULIA ZELLWEGER      | RIDER CADDYSHACK       |         2011 | PG     |
+| WOODY HOFFMAN        | ROOM ROMAN             |         2011 | PG     |
+| SEAN WILLIAMS        | ROOM ROMAN             |         2011 | PG     |
+| UMA WOOD             | CHINATOWN GLADIATOR    |         2012 | PG     |
+| DAN TORN             | CHINATOWN GLADIATOR    |         2012 | PG     |
+| BOB FAWCETT          | CHINATOWN GLADIATOR    |         2012 | PG     |
+| JUDE CRUISE          | CHINATOWN GLADIATOR    |         2012 | PG     |
+| JESSICA BAILEY       | CHINATOWN GLADIATOR    |         2012 | PG     |
+| SEAN WILLIAMS        | CHINATOWN GLADIATOR    |         2012 | PG     |
+| PENELOPE MONROE      | CHINATOWN GLADIATOR    |         2012 | PG     |
+| GEOFFREY HESTON      | CHINATOWN GLADIATOR    |         2012 | PG     |
+| JEFF SILVERSTONE     | CHINATOWN GLADIATOR    |         2012 | PG     |
+| JAYNE SILVERSTONE    | CHINATOWN GLADIATOR    |         2012 | PG     |
+| VAL BOLGER           | ALASKA PHANTOM         |         2012 | PG     |
+| BURT POSEY           | ALASKA PHANTOM         |         2012 | PG     |
+| SIDNEY CROWE         | ALASKA PHANTOM         |         2012 | PG     |
+| SYLVESTER DERN       | ALASKA PHANTOM         |         2012 | PG     |
+| ALBERT JOHANSSON     | ALASKA PHANTOM         |         2012 | PG     |
+| GENE MCKELLEN        | ALASKA PHANTOM         |         2012 | PG     |
+| JEFF SILVERSTONE     | ALASKA PHANTOM         |         2012 | PG     |
+| BETTE NICHOLSON      | COAST RAINBOW          |         2012 | PG     |
+| CAMERON STREEP       | COAST RAINBOW          |         2012 | PG     |
+| SISSY SOBIESKI       | COAST RAINBOW          |         2012 | PG     |
+| REESE KILMER         | COAST RAINBOW          |         2012 | PG     |
+| FRANCES DAY-LEWIS    | COAST RAINBOW          |         2012 | PG     |
+| ANGELA WITHERSPOON   | COAST RAINBOW          |         2012 | PG     |
+| OPRAH KILMER         | COAST RAINBOW          |         2012 | PG     |
+| LISA MONROE          | COAST RAINBOW          |         2012 | PG     |
+| BURT TEMPLE          | COAST RAINBOW          |         2012 | PG     |
+| REESE WEST           | COAST RAINBOW          |         2012 | PG     |
+| JULIA MCQUEEN        | CIDER DESIRE           |         2012 | PG     |
+| JODIE DEGENERES      | CIDER DESIRE           |         2012 | PG     |
+| FRANCES DAY-LEWIS    | CIDER DESIRE           |         2012 | PG     |
+| PENELOPE PINKETT     | CIDER DESIRE           |         2012 | PG     |
+| JON CHASE            | CIDER DESIRE           |         2012 | PG     |
+| MARY TANDY           | CHILL LUCK             |         2012 | PG     |
+| BURT POSEY           | CHILL LUCK             |         2012 | PG     |
+| WOODY JOLIE          | CHILL LUCK             |         2012 | PG     |
+| MEG HAWKE            | CHILL LUCK             |         2012 | PG     |
+| WARREN JACKMAN       | CHILL LUCK             |         2012 | PG     |
+| KIRSTEN PALTROW      | CHICKEN HELLFIGHTERS   |         2012 | PG     |
+| HENRY BERRY          | CHICKEN HELLFIGHTERS   |         2012 | PG     |
+| CARY MCCONAUGHEY     | ALI FOREVER            |         2012 | PG     |
+| CHRISTOPHER BERRY    | ALI FOREVER            |         2012 | PG     |
+| KENNETH TORN         | ALI FOREVER            |         2012 | PG     |
+| MORGAN MCDORMAND     | ALI FOREVER            |         2012 | PG     |
+| JON CHASE            | ALI FOREVER            |         2012 | PG     |
+| RIP CRAWFORD         | BRANNIGAN SUNRISE      |         2013 | PG     |
+| KENNETH HOFFMAN      | BRANNIGAN SUNRISE      |         2013 | PG     |
+| KARL BERRY           | BOUND CHEAPER          |         2013 | PG     |
+| CUBA OLIVIER         | BOUND CHEAPER          |         2013 | PG     |
+| KIRSTEN PALTROW      | BORN SPINAL            |         2013 | PG     |
+| SISSY SOBIESKI       | BORN SPINAL            |         2013 | PG     |
+| NICK STALLONE        | BORN SPINAL            |         2013 | PG     |
+| DUSTIN TAUTOU        | BORN SPINAL            |         2013 | PG     |
+| RAY JOHANSSON        | BORN SPINAL            |         2013 | PG     |
+| KENNETH PALTROW      | BORN SPINAL            |         2013 | PG     |
+| DAN STREEP           | BORN SPINAL            |         2013 | PG     |
+| RITA REYNOLDS        | BORN SPINAL            |         2013 | PG     |
+| MERYL ALLEN          | BORN SPINAL            |         2013 | PG     |
+| JOHNNY CAGE          | GRAFFITI LOVE          |         2013 | PG     |
+| CHRISTIAN NEESON     | GRAFFITI LOVE          |         2013 | PG     |
+| KENNETH PALTROW      | GRAFFITI LOVE          |         2013 | PG     |
+| GARY PENN            | GRAFFITI LOVE          |         2013 | PG     |
+| SEAN GUINESS         | GRAFFITI LOVE          |         2013 | PG     |
+| AUDREY BAILEY        | GRAFFITI LOVE          |         2013 | PG     |
+| SISSY SOBIESKI       | GREEK EVERYONE         |         2013 | PG     |
+| BURT DUKAKIS         | GREEK EVERYONE         |         2013 | PG     |
+| RIP WINSLET          | GREEK EVERYONE         |         2013 | PG     |
+| CATE HARRIS          | GREEK EVERYONE         |         2013 | PG     |
+| JULIA MCQUEEN        | GLADIATOR WESTWARD     |         2013 | PG     |
+| KIRK JOVOVICH        | GLADIATOR WESTWARD     |         2013 | PG     |
+| ADAM GRANT           | GLADIATOR WESTWARD     |         2013 | PG     |
+| CAMERON ZELLWEGER    | GLADIATOR WESTWARD     |         2013 | PG     |
+| IAN TANDY            | GLADIATOR WESTWARD     |         2013 | PG     |
+| JAYNE SILVERSTONE    | GLADIATOR WESTWARD     |         2013 | PG     |
+| DAN TORN             | BOILED DARES           |         2013 | PG     |
+| TIM HACKMAN          | BOILED DARES           |         2013 | PG     |
+| NICK STALLONE        | BOILED DARES           |         2013 | PG     |
+| PENELOPE PINKETT     | BOILED DARES           |         2013 | PG     |
+| JIM MOSTEL           | BOILED DARES           |         2013 | PG     |
+| MORGAN HOPKINS       | BOILED DARES           |         2013 | PG     |
+| GREGORY GOODING      | BOILED DARES           |         2013 | PG     |
+| JULIA FAWCETT        | BOILED DARES           |         2013 | PG     |
+| GRACE MOSTEL         | GASLIGHT CRUSADE       |         2013 | PG     |
+| JULIA BARRYMORE      | GASLIGHT CRUSADE       |         2013 | PG     |
+| WALTER TORN          | GASLIGHT CRUSADE       |         2013 | PG     |
+| RICHARD PENN         | GASLIGHT CRUSADE       |         2013 | PG     |
+| FAY WINSLET          | GASLIGHT CRUSADE       |         2013 | PG     |
+| FRED COSTNER         | GABLES METROPOLIS      |         2013 | PG     |
+| RIP CRAWFORD         | GABLES METROPOLIS      |         2013 | PG     |
+| FRANCES DAY-LEWIS    | GABLES METROPOLIS      |         2013 | PG     |
+| RAY JOHANSSON        | GABLES METROPOLIS      |         2013 | PG     |
+| GROUCHO DUNST        | GABLES METROPOLIS      |         2013 | PG     |
+| CATE MCQUEEN         | GABLES METROPOLIS      |         2013 | PG     |
+| ADAM HOPPER          | GABLES METROPOLIS      |         2013 | PG     |
+| GROUCHO WILLIAMS     | GABLES METROPOLIS      |         2013 | PG     |
+| NICK WAHLBERG        | GOODFELLAS SALUTE      |         2013 | PG     |
+| JOHNNY LOLLOBRIGIDA  | GOODFELLAS SALUTE      |         2013 | PG     |
+| ELVIS MARX           | GOODFELLAS SALUTE      |         2013 | PG     |
+| BEN WILLIS           | GOODFELLAS SALUTE      |         2013 | PG     |
+| GINA DEGENERES       | GOODFELLAS SALUTE      |         2013 | PG     |
+| SUSAN DAVIS          | GOODFELLAS SALUTE      |         2013 | PG     |
+| FRANCES TOMEI        | GOODFELLAS SALUTE      |         2013 | PG     |
+| REESE WEST           | GOODFELLAS SALUTE      |         2013 | PG     |
+| RIP WINSLET          | DAWN POND              |         2014 | PG     |
+| SCARLETT DAMON       | DAWN POND              |         2014 | PG     |
+| MATTHEW LEIGH        | DAWN POND              |         2014 | PG     |
+| VIVIEN BASINGER      | DAWN POND              |         2014 | PG     |
+| GROUCHO WILLIAMS     | DAWN POND              |         2014 | PG     |
+| MERYL ALLEN          | DAWN POND              |         2014 | PG     |
+| ANNE CRONYN          | DANGEROUS UPTOWN       |         2014 | PG     |
+| MARY TANDY           | DANGEROUS UPTOWN       |         2014 | PG     |
+| RALPH CRUZ           | DANGEROUS UPTOWN       |         2014 | PG     |
+| SPENCER PECK         | DANGEROUS UPTOWN       |         2014 | PG     |
+| KIRSTEN AKROYD       | DANGEROUS UPTOWN       |         2014 | PG     |
+| DARYL WAHLBERG       | DANGEROUS UPTOWN       |         2014 | PG     |
+| CATE HARRIS          | DANGEROUS UPTOWN       |         2014 | PG     |
+| ALBERT JOHANSSON     | DANGEROUS UPTOWN       |         2014 | PG     |
+| JOE SWANK            | DALMATIONS SWEDEN      |         2014 | PG     |
+| KEVIN BLOOM          | DALMATIONS SWEDEN      |         2014 | PG     |
+| VAL BOLGER           | DALMATIONS SWEDEN      |         2014 | PG     |
+| GROUCHO DUNST        | DALMATIONS SWEDEN      |         2014 | PG     |
+| ALBERT NOLTE         | DALMATIONS SWEDEN      |         2014 | PG     |
+| AL GARLAND           | DALMATIONS SWEDEN      |         2014 | PG     |
+| HELEN VOIGHT         | CYCLONE FAMILY         |         2014 | PG     |
+| RIP CRAWFORD         | CYCLONE FAMILY         |         2014 | PG     |
+| JUDY DEAN            | CYCLONE FAMILY         |         2014 | PG     |
+| SISSY SOBIESKI       | CRAZY HOME             |         2015 | PG     |
+| WOODY JOLIE          | CRAZY HOME             |         2015 | PG     |
+| MEG HAWKE            | CRAZY HOME             |         2015 | PG     |
+| RUSSELL BACALL       | CRAZY HOME             |         2015 | PG     |
+| MORGAN MCDORMAND     | CRAZY HOME             |         2015 | PG     |
+| ALBERT NOLTE         | CRAZY HOME             |         2015 | PG     |
+| CATE HARRIS          | CRAZY HOME             |         2015 | PG     |
+| RUSSELL TEMPLE       | CRAZY HOME             |         2015 | PG     |
+| VIVIEN BASINGER      | CRAZY HOME             |         2015 | PG     |
+| HARVEY HOPE          | CRAZY HOME             |         2015 | PG     |
+| WILL WILSON          | CRAZY HOME             |         2015 | PG     |
+| ALAN DREYFUSS        | CRAZY HOME             |         2015 | PG     |
+| GENE MCKELLEN        | CRAZY HOME             |         2015 | PG     |
+| ED CHASE             | COWBOY DOOM            |         2015 | PG     |
+| MILLA KEITEL         | COWBOY DOOM            |         2015 | PG     |
+| JULIANNE DENCH       | COWBOY DOOM            |         2015 | PG     |
+| WHOOPI HURT          | COWBOY DOOM            |         2015 | PG     |
+| GREGORY GOODING      | COWBOY DOOM            |         2015 | PG     |
+| KIRSTEN PALTROW      | AGENT TRUMAN           |         2015 | PG     |
+| SANDRA KILMER        | AGENT TRUMAN           |         2015 | PG     |
+| JAYNE NEESON         | AGENT TRUMAN           |         2015 | PG     |
+| WARREN NOLTE         | AGENT TRUMAN           |         2015 | PG     |
+| MORGAN WILLIAMS      | AGENT TRUMAN           |         2015 | PG     |
+| KENNETH HOFFMAN      | AGENT TRUMAN           |         2015 | PG     |
+| REESE WEST           | AGENT TRUMAN           |         2015 | PG     |
+| CAMERON STREEP       | CROW GREASE            |         2015 | PG     |
+| JODIE DEGENERES      | CROW GREASE            |         2015 | PG     |
+| SCARLETT DAMON       | CROW GREASE            |         2015 | PG     |
+| CHRIS BRIDGES        | CROW GREASE            |         2015 | PG     |
+| WALTER TORN          | CROW GREASE            |         2015 | PG     |
+| GROUCHO DUNST        | CROW GREASE            |         2015 | PG     |
+| CAMERON ZELLWEGER    | CROW GREASE            |         2015 | PG     |
+| MORGAN MCDORMAND     | CROW GREASE            |         2015 | PG     |
+| FRANCES TOMEI        | CROW GREASE            |         2015 | PG     |
+| LISA MONROE          | CROW GREASE            |         2015 | PG     |
++----------------------+------------------------+--------------+--------+
+413 rows in set (0.00 sec)
 
 ```
 </details>
 
 
 <details>
-  <summary>Question 9 : </summary>
+  <summary>Question 9 : In which year most films were released?</summary>
   
   ## QUERY : 
 ``` 
+   SELECT release_year, COUNT(release_year) AS Total_Films FROM film GROUP BY release_year ORDER BY COUNT(release_year) DESC LIMIT 1;
+
 ```
 
 ## RESULT 
 ```
-
++--------------+-------------+
+| release_year | Total_Films |
++--------------+-------------+
+|         2017 |         110 |
++--------------+-------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
 
 
 <details>
-  <summary>Question 10 : </summary>
+  <summary>Question 10 : In which year least number of films were released ?</summary>
   
   ## QUERY : 
 ``` 
+   SELECT release_year, COUNT(release_year) AS Total_Films FROM film GROUP BY release_year ORDER BY COUNT(release_year) ASC LIMIT 1;
+   
 ```
 
 ## RESULT 
 ```
-
++--------------+-------------+
+| release_year | Total_Films |
++--------------+-------------+
+|         2010 |           1 |
++--------------+-------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
