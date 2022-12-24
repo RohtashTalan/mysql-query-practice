@@ -1097,7 +1097,7 @@ mysql> select * from film where film_id=17;
   ## QUERY : 
 ``` 
    SELECT release_year, COUNT(release_year) AS Total_Films FROM film GROUP BY release_year ORDER BY COUNT(release_year) ASC LIMIT 1;
-   
+
 ```
 
 ## RESULT 
@@ -1114,15 +1114,23 @@ mysql> select * from film where film_id=17;
 
 
 <details>
-  <summary>Question 11 : </summary>
+  <summary>Question 11 : Get the details of the films with maximum length released in 2014 ?</summary>
   
   ## QUERY : 
 ``` 
+
+   SELECT *, language.name AS language_name FROM film INNER JOIN language ON language.language_id=film.language_id WHERE film.release_year=2014 ORDER BY film.length DESC LIMIT 1;
+
 ```
 
 ## RESULT 
 ```
-
++---------+----------------+-----------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+------------------+---------------------+-------------+--------+---------------------+---------------+
+| film_id | title          | description                                                                                   | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features | last_update         | language_id | name   | last_update         | language_name |
++---------+----------------+-----------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+------------------+---------------------+-------------+--------+---------------------+---------------+
+|     212 | DARN FORRESTER | A Fateful Story of a A Shark And a Explorer who must Succumb a Technical Writer in A Jet Boat |         2014 |           5 |                 NULL |               7 |        4.99 |    185 |            14.99 | G      | Deleted Scenes   | 2020-07-30 18:07:53 |           5 | French | 2020-07-30 18:07:56 | French        |
++---------+----------------+-----------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+------------------+---------------------+-------------+--------+---------------------+---------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
