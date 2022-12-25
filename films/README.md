@@ -1179,7 +1179,7 @@ mysql> select * from film where film_id=17;
       INSERT INTO city(city, country_id) VALUE('Florence',(SELECT country.country_id FROM country WHERE country.country='Italy'));
       UPDATE address SET address.address='055, Piazzale Michelangelo', address.district='Rifredi', address.postal_code='50125', 
       address.city_id=(SELECT city.city_id FROM city WHERE city.city='Florence') WHERE address_id=(SELECT address_id FROM actor WHERE actor_id=16);
-      
+
 ```
 
 ## RESULT 
@@ -1194,30 +1194,64 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 <details>
-  <summary>Question 14 : </summary>
+  <summary>Question 14 : A new film "No Time to Die" is releasing in 2020 whose details are 
+  ```
+  Title: No Time to Die
+  Description: Recruited to rescue a kidnapped scientist, globe-trootting spy James Bond finds himself hot and the trail of a mysterious villain, who's armed with a dangerous new technology.
+  Language: English
+  Org. Language: English
+  Length: 100
+  Rental duration: 6
+  Rental rate: 3.99
+  Rating: PG-13
+  Replacement cost: 20.99
+  Special Features: Trailers, Deleted Scenes
+  ```
+  </summary>
   
   ## QUERY : 
 ``` 
+ INSERT INTO film(title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, replacement_cost, rating, special_features) 
+ VALUE('No Time to Die', "Recruited to rescue a kidnapped scientist, globe-trootting spy James Bond finds himself hot and the trail of a mysterious villain, who's armed with a dangerous new technology.", 2020, (SELECT language_id FROM language WHERE name='English'), 
+ (SELECT language_id FROM language WHERE name='English'), 6, 3.99, 100, 20.99, 'PG-13',
+  'Trailers,Deleted Scenes')
+
 ```
 
 ## RESULT 
 ```
+Database changed
+Query OK, 1 row affected (0.00 sec)
 
+mysql> select * from film where title='No Time to Die';
++---------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+-------------------------+---------------------+       
+| film_id | title          | description                                                                                                                                                       
+              | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features        | last_update         |       
++---------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+-------------------------+---------------------+       
+|    1002 | No Time to Die | Recruited to rescue a kidnapped scientist, globe-trootting spy James Bond finds himself hot and the trail of a mysterious villain, who's armed with a dangerous new technology. |         2020 |           1 |                    1 |               6 |        3.99 |    100 |            20.99 | PG-13  | Trailers,Deleted Scenes | 2022-12-25 07:41:49 |
++---------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+-------------------------+---------------------+       
+1 row in set (0.00 sec)
 
 ```
 </details>
 
 
 <details>
-  <summary>Question 15 : </summary>
+  <summary>Question 15 : Assign the category Action,Classics,Drama to the movie "No Time to Die".</summary>
   
   ## QUERY : 
 ``` 
+      INSERT INTO film_category(film_id,category_id) VALUE 
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Action')),
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Classics')),
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Drama'));
+      
 ```
 
 ## RESULT 
 ```
-
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
 
 ```
 </details>
