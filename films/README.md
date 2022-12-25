@@ -1170,15 +1170,24 @@ mysql> select * from film where film_id=17;
 
 
 <details>
-  <summary>Question 13 : </summary>
+  <summary>Question 13 : The actor FRED COSTNER(id:16) shifted to new address: 
+  `055, Piazzale Michelangelo, Postal Code - 50125, District - Rifredi at Florence, Italy.` Insert the new city and update the address of the actor.
+  </summary>
   
   ## QUERY : 
 ``` 
+      INSERT INTO city(city, country_id) VALUE('Florence',(SELECT country.country_id FROM country WHERE country.country='Italy'));
+      UPDATE address SET address.address='055, Piazzale Michelangelo', address.district='Rifredi', address.postal_code='50125', 
+      address.city_id=(SELECT city.city_id FROM city WHERE city.city='Florence') WHERE address_id=(SELECT address_id FROM actor WHERE actor_id=16);
+      
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.00 sec)
 
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 ```
 </details>
