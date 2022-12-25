@@ -1245,7 +1245,7 @@ mysql> select * from film where title='No Time to Die';
       ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Action')),
       ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Classics')),
       ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT category_id FROM category WHERE name='Drama'));
-      
+
 ```
 
 ## RESULT 
@@ -1258,15 +1258,22 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 16 : </summary>
+  <summary>Question 16 : Assign the cast: PENELOPE GUINESS, NICK WAHLBERG, JOE SWANK to the movie "NO Time to Die".</summary>
   
   ## QUERY : 
 ``` 
+      INSERT INTO film_actor(film_id,actor_id) VALUE 
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='PENELOPE GUINESS')),
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='NICK WAHLBERG')),
+      ((SELECT film_id FROM film WHERE title='No Time to Die'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='JOE SWANK'));
+      
 ```
 
 ## RESULT 
 ```
 
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
 
 ```
 </details>
