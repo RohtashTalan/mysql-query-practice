@@ -1137,15 +1137,33 @@ mysql> select * from film where film_id=17;
 
 
 <details>
-  <summary>Question 12 : </summary>
+  <summary>Question 12 : Get all Sci-Fi movies with NC-17 rating and language they are screend in</summary>
   
   ## QUERY : 
 ``` 
+      SELECT film.title, language.name, film.rating FROM film 
+      INNER JOIN language ON film.language_id=language.language_id 
+      INNER JOIN film_category ON film_category.film_id=film.film_id
+      INNER JOIN category ON category.category_id=film_category.category_id
+      WHERE category.name='Sci-Fi' AND film.rating='NC-17';
 ```
 
 ## RESULT 
 ```
-
++----------------------+----------+--------+--------------+
+| title                | name     | rating | release_year |
++----------------------+----------+--------+--------------+
+| CAMELOT VACATION     | Japanese | NC-17  |         2005 |
+| CINCINATTI WHISPERER | Mandarin | NC-17  |         2012 |
+| HANKY OCTOBER        | German   | NC-17  |         2019 |
+| HOLLOW JEOPARDY      | German   | NC-17  |         2020 |
+| LICENSE WEEKEND      | German   | NC-17  |         2017 |
+| NEMO CAMPUS          | Mandarin | NC-17  |         2003 |
+| NONE SPIKING         | Mandarin | NC-17  |         2003 |
+| PANTHER REDS         | Mandarin | NC-17  |         2007 |
+| RANDOM GO            | Mandarin | NC-17  |         2011 |
++----------------------+----------+--------+--------------+
+9 rows in set (0.00 sec)
 
 ```
 </details>
