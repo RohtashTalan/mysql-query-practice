@@ -1280,15 +1280,21 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 17 : </summary>
+  <summary>Question 17 : Assign a new category Thriller to the movie ANGELS LIFE</summary>
   
   ## QUERY : 
 ``` 
+
+      INSERT INTO category(name) VALUE('Thriller');
+      INSERT INTO film_category(film_id,category_id) VALUE ((SELECT film_id FROM film WHERE title='ANGELS LIFE'),(SELECT category_id FROM category WHERE name='Thriller'));
+      
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.01 sec)
 
+Query OK, 1 row affected (0.00 sec)
 
 ```
 </details>
