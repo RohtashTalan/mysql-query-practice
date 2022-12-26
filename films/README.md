@@ -1287,7 +1287,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 
       INSERT INTO category(name) VALUE('Thriller');
       INSERT INTO film_category(film_id,category_id) VALUE ((SELECT film_id FROM film WHERE title='ANGELS LIFE'),(SELECT category_id FROM category WHERE name='Thriller'));
-      
+
 ```
 
 ## RESULT 
@@ -1301,15 +1301,24 @@ Query OK, 1 row affected (0.00 sec)
 
 
 <details>
-  <summary>Question 18 : </summary>
+  <summary>Question 18 : Which actor acted in most movies?</summary>
   
   ## QUERY : 
 ``` 
+
+      SELECT CONCAT(actor.first_name, ' ', actor.last_name) AS Actor_name, COUNT(film_actor.film_id) AS Total_Films FROM actor 
+      INNER JOIN film_actor ON actor.actor_id=film_actor.actor_id GROUP BY film_actor.actor_id ORDER BY COUNT(film_actor.actor_id) DESC LIMIT 1;
+      
 ```
 
 ## RESULT 
 ```
-
++----------------+-------------+
+| Actor_name     | Total_Films |
++----------------+-------------+
+| GINA DEGENERES |          42 |
++----------------+-------------+
+1 row in set (0.02 sec)
 
 ```
 </details>
