@@ -1341,15 +1341,20 @@ Query OK, 1 row affected (0.02 sec)
 
 
 <details>
-  <summary>Question 20 : </summary>
+  <summary>Question 20 : The HARPER DYING movie is an animated movie with Drama and Comedy. Assign these categories to the movie.</summary>
   
   ## QUERY : 
 ``` 
+
+      INSERT INTO film_category(film_id,category_id) VALUE ((SELECT film_id FROM film WHERE title='HARPER DYING'),(SELECT category_id FROM category WHERE name='Drama')),
+      ((SELECT film_id FROM film WHERE title='HARPER DYING'),(SELECT category_id FROM category WHERE name='Comedy'));
+
 ```
 
 ## RESULT 
 ```
-
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
 
 ```
 </details>
