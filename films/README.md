@@ -1308,7 +1308,7 @@ Query OK, 1 row affected (0.00 sec)
 
       SELECT CONCAT(actor.first_name, ' ', actor.last_name) AS Actor_name, COUNT(film_actor.film_id) AS Total_Films FROM actor 
       INNER JOIN film_actor ON actor.actor_id=film_actor.actor_id GROUP BY film_actor.actor_id ORDER BY COUNT(film_actor.actor_id) DESC LIMIT 1;
-      
+
 ```
 
 ## RESULT 
@@ -1325,15 +1325,16 @@ Query OK, 1 row affected (0.00 sec)
 
 
 <details>
-  <summary>Question 19 : </summary>
+  <summary>Question 19 : The actor JOHNNY LOLLOBRIGIDA was removed from the movie GRAIL FRANKENSTEIN. How would you update that record ?</summary>
   
   ## QUERY : 
 ``` 
+      DELETE FROM film_actor WHERE film_actor.actor_id=(SELECT actor.actor_id FROM actor WHERE CONCAT(actor.first_name, ' ', actor.last_name)='JOHNNY LOLLOBRIGIDA') AND film_actor.film_id=(SELECT film.film_id FROM film WHERE film.title='GRAIL FRANKENSTEIN');
 ```
 
 ## RESULT 
 ```
-
+Query OK, 1 row affected (0.02 sec)
 
 ```
 </details>
