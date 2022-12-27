@@ -1370,7 +1370,7 @@ Records: 2  Duplicates: 0  Warnings: 0
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='DAN TORN')),
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='MAE HOFFMAN')),
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='SCARLETT DAMON'));
-            
+
 ```
 
 ## RESULT 
@@ -1386,15 +1386,24 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 22 : </summary>
+  <summary>Question 22 : the entire category of the movie WEST LION was wrongly inserted. The correct categories are Classics, Family, Children. How would you update the record ensuring no wrong data is left?</summary>
   
   ## QUERY : 
 ``` 
+            DELETE FROM film_category WHERE film_category.film_id=(SELECT film_id FROM film WHERE title='WEST LION');
+            INSERT INTO film_category(film_id, category_id) VALUE
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Classics')),
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Family')),
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Children'));
+            
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.00 sec)
 
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
 
 ```
 </details>
