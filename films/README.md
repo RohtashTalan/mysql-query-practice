@@ -1487,15 +1487,22 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 26 : </summary>
+  <summary>Question 26 : What is the total length of all movies played in 2008 ?</summary>
   
   ## QUERY : 
 ``` 
+            SELECT SUM(film.length) AS Total_length FROM film WHERE film.release_year=2008;
+            
 ```
 
 ## RESULT 
 ```
-
++--------------+
+| Total_length |
++--------------+
+|         1306 |
++--------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
