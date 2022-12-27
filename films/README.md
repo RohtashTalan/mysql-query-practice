@@ -1577,15 +1577,46 @@ SELECT film.release_year, COUNT(*) AS Movies_Released FROM film GROUP BY release
 
 
 <details>
-  <summary>Question 29 : </summary>
+  <summary>Question 29 : How many languages of movies were released each year?</summary>
   
   ## QUERY : 
 ``` 
+
+            SELECT film.release_year, COUNT(DISTINCT film.language_id) AS No_of_languages_Movies_Released FROM film
+            GROUP BY film.release_year ORDER BY release_year;
+            
 ```
 
 ## RESULT 
 ```
-
++--------------+---------------------------------+
+| release_year | No_of_languages_Movies_Released |
++--------------+---------------------------------+
+|         1987 |                               1 |
+|         1996 |                               2 |
+|         1998 |                               1 |
+|         1999 |                               1 |
+|         2000 |                               2 |
+|         2002 |                               1 |
+|         2003 |                               1 |
+|         2004 |                               1 |
+|         2005 |                               1 |
+|         2007 |                               2 |
+|         2008 |                               1 |
+|         2009 |                               1 |
+|         2010 |                               1 |
+|         2011 |                               2 |
+|         2012 |                               2 |
+|         2013 |                               2 |
+|         2014 |                               3 |
+|         2015 |                               2 |
+|         2016 |                               3 |
+|         2017 |                               5 |
+|         2018 |                               3 |
+|         2019 |                               3 |
+|         2020 |                               2 |
++--------------+---------------------------------+
+23 rows in set (0.00 sec)
 
 ```
 </details>
