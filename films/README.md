@@ -1395,7 +1395,7 @@ Records: 3  Duplicates: 0  Warnings: 0
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Classics')),
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Family')),
             ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT category_id FROM category WHERE name='Children'));
-            
+
 ```
 
 ## RESULT 
@@ -1411,15 +1411,22 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 23 : </summary>
+  <summary>Question 23 : How many actors acted in films released in 2017?</summary>
   
   ## QUERY : 
 ``` 
+           SELECT COUNT(film_actor.actor_id) AS Total_Actors FROM film_actor INNER JOIN film ON film_actor.film_id=film.film_id WHERE film.release_year=2017;
+           
 ```
 
 ## RESULT 
 ```
-
++--------------+
+| Total_Actors |
++--------------+
+|          618 |
++--------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
