@@ -1492,7 +1492,7 @@ Records: 3  Duplicates: 0  Warnings: 0
   ## QUERY : 
 ``` 
             SELECT SUM(film.length) AS Total_length FROM film WHERE film.release_year=2008;
-            
+
 ```
 
 ## RESULT 
@@ -1509,15 +1509,24 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 27 : </summary>
+  <summary>Question 27 : Which films has the shortest length? In which language and year was it released?</summary>
   
   ## QUERY : 
 ``` 
+    SELECT film.title AS Film_Name, film.release_year, film.length, language.name AS Language FROM film 
+            INNER JOIN language ON film.language_id=language.language_id 
+            ORDER BY film.length ASC LIMIT 1;
+
 ```
 
 ## RESULT 
 ```
-
++--------------+--------------+--------+----------+
+| Film_Name    | release_year | length | Language |
++--------------+--------------+--------+----------+
+| ALIEN CENTER |         2016 |     46 | Italian  |
++--------------+--------------+--------+----------+
+1 row in set (0.00 sec)
 
 ```
 </details>
