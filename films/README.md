@@ -1533,15 +1533,44 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 28 : </summary>
+  <summary>Question 28 : How many movies were released each year ?</summary>
   
   ## QUERY : 
 ``` 
+SELECT film.release_year, COUNT(*) AS Movies_Released FROM film GROUP BY release_year;
+
 ```
 
 ## RESULT 
 ```
-
++--------------+-----------------+
+| release_year | Movies_Released |
++--------------+-----------------+
+|         2019 |              44 |
+|         2018 |              24 |
+|         2017 |             110 |
+|         2016 |              57 |
+|         2015 |              19 |
+|         2014 |              25 |
+|         2020 |              32 |
+|         2010 |               1 |
+|         2012 |              40 |
+|         2008 |              11 |
+|         2009 |              14 |
+|         2011 |              79 |
+|         2013 |              50 |
+|         2005 |              24 |
+|         2004 |              41 |
+|         2007 |              95 |
+|         2002 |              51 |
+|         2003 |              45 |
+|         1999 |              43 |
+|         2000 |              56 |
+|         1996 |              60 |
+|         1998 |              40 |
+|         1987 |              39 |
++--------------+-----------------+
+23 rows in set (0.00 sec)
 
 ```
 </details>
