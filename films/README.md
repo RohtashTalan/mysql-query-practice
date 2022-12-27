@@ -1584,7 +1584,7 @@ SELECT film.release_year, COUNT(*) AS Movies_Released FROM film GROUP BY release
 
             SELECT film.release_year, COUNT(DISTINCT film.language_id) AS No_of_languages_Movies_Released FROM film
             GROUP BY film.release_year ORDER BY release_year;
-            
+
 ```
 
 ## RESULT 
@@ -1623,15 +1623,24 @@ SELECT film.release_year, COUNT(*) AS Movies_Released FROM film GROUP BY release
 
 
 <details>
-  <summary>Question 30 : </summary>
+  <summary>Question 30 : Which actor did least movies?</summary>
   
   ## QUERY : 
 ``` 
+
+            SELECT CONCAT(actor.first_name, ' ', actor.last_name) AS Actor_Name, COUNT(film_actor.film_id) AS No_of_Movies FROM film_actor
+            INNER JOIN actor ON film_actor.actor_id=actor.actor_id
+            GROUP BY film_actor.actor_id ORDER BY COUNT(film_actor.film_id) ASC LIMIT 1;
 ```
 
 ## RESULT 
 ```
-
++------------+--------------+
+| Actor_Name | No_of_Movies |
++------------+--------------+
+| EMILY DEE  |           14 |
++------------+--------------+
+1 row in set (0.01 sec)
 
 ```
 </details>
