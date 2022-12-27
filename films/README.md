@@ -1361,14 +1361,24 @@ Records: 2  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 21 : </summary>
+  <summary>Question 21 : The entire cast of the movie WEST LION has changed. The new actors are DAN TORN, MAE HOFFMAN, SCARLETT DAMON. How would you update the record in the safest way?</summary>
   
   ## QUERY : 
 ``` 
+            DELETE FROM film_actor WHERE film_actor.film_id=(SELECT film_id FROM film WHERE title='WEST LION');
+            INSERT INTO film_actor(film_id, actor_id) VALUE
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='DAN TORN')),
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='MAE HOFFMAN')),
+            ((SELECT film_id FROM film WHERE title='WEST LION'),(SELECT actor_id FROM actor WHERE CONCAT(first_name,' ',last_name)='SCARLETT DAMON'));
+            
 ```
 
 ## RESULT 
 ```
+
+Query OK, 9 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
 
 
 ```
