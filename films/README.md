@@ -1416,7 +1416,7 @@ Records: 3  Duplicates: 0  Warnings: 0
   ## QUERY : 
 ``` 
            SELECT COUNT(film_actor.actor_id) AS Total_Actors FROM film_actor INNER JOIN film ON film_actor.film_id=film.film_id WHERE film.release_year=2017;
-           
+
 ```
 
 ## RESULT 
@@ -1434,15 +1434,22 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 24 : </summary>
+  <summary>Question 24 : How many Sci-Fi films released between the year 2007 to 2017?</summary>
   
   ## QUERY : 
 ``` 
+           SELECT COUNT(*) AS Total_films FROM film INNER JOIN film_category ON film_category.film_id=film.film_id WHERE film_category.category_id=(SELECT category_id FROM category WHERE name='Sci-Fi') AND film.release_year BETWEEN 2017 AND 2017;
+           
 ```
 
 ## RESULT 
 ```
-
++-------------+
+| Total_films |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
