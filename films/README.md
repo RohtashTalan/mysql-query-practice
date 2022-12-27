@@ -1439,7 +1439,7 @@ Records: 3  Duplicates: 0  Warnings: 0
   ## QUERY : 
 ``` 
            SELECT COUNT(*) AS Total_films FROM film INNER JOIN film_category ON film_category.film_id=film.film_id WHERE film_category.category_id=(SELECT category_id FROM category WHERE name='Sci-Fi') AND film.release_year BETWEEN 2017 AND 2017;
-           
+
 ```
 
 ## RESULT 
@@ -1456,15 +1456,31 @@ Records: 3  Duplicates: 0  Warnings: 0
 
 
 <details>
-  <summary>Question 25 : </summary>
+  <summary>Question 25 : Fetch the actors of the movie WESTWARD SEABISCUIT with the city they live in.</summary>
   
   ## QUERY : 
 ``` 
+            SELECT CONCAT(actor.first_name, ' ', actor.last_name) AS Actor_Name, city.city AS City_Name FROM actor 
+            INNER JOIN film_actor ON film_actor.actor_id=actor.actor_id
+            INNER JOIN film ON film_actor.film_id=film.film_id
+            INNER JOIN address ON actor.address_id=address.address_id
+            INNER JOIN city ON address.city_id=city.city_id
+            WHERE film.title='WESTWARD SEABISCUIT';
 ```
 
 ## RESULT 
 ```
-
++------------------+------------+
+| Actor_Name       | City_Name  |
++------------------+------------+
+| PENELOPE GUINESS | Lethbridge |
+| VIVIEN BERGEN    | Tangail    |
+| PENELOPE PINKETT | Siegen     |
+| CHARLIZE DENCH   | Bellevue   |
+| KEVIN GARLAND    | Inegl      |
+| LUCILLE DEE      | Saarbrcken |
++------------------+------------+
+6 rows in set (0.02 sec)
 
 ```
 </details>
