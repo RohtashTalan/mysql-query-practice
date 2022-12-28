@@ -1,15 +1,29 @@
 # Motors Sql Query practice 
 
 
-<details><summary>Question 1 : </summary>
+<details><summary>Question 1 : How would you fetch details of the customers who cancelled orders?</summary>
   
   ## QUERY : 
 ``` 
+        SELECT customers.customer_id, customers.customer_name, customers.phone, orders.status FROM customers
+        INNER JOIN orders ON orders.customer_id=customers.customer_id
+        WHERE orders.status='cancelled';
 
 ```
 
 ## RESULT 
 ```
++-------------+-------------------------+----------------+-----------+
+| customer_id | customer_name           | phone          | status    |
++-------------+-------------------------+----------------+-----------+
+|         448 | Scandinavian Gift Ideas | 0695-34 6555   | Cancelled |
+|         496 | Kelly's Gift Shop       | +64 9 5555500  | Cancelled |
+|         131 | Land of Toys Inc.       | 2125557818     | Cancelled |
+|         201 | UK Collectables, Ltd.   | (171) 555-2282 | Cancelled |
+|         357 | GiftsForHim.com         | 64-9-3763555   | Cancelled |
+|         141 | Euro+ Shopping Channel  | (91) 555 94 44 | Cancelled |
++-------------+-------------------------+----------------+-----------+
+6 rows in set (0.00 sec)
 
 ```
 </details>
