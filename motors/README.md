@@ -5,7 +5,13 @@
   
   ## QUERY : 
 ``` 
-        SELECT customers.customer_id, customers.customer_name, customers.phone, orders.status FROM customers
+        SELECT *, orders.status FROM customers
+        INNER JOIN orders ON orders.customer_id=customers.customer_id
+        WHERE orders.status='cancelled';
+
+
+        ----
+        SELECT * FROM customers
         INNER JOIN orders ON orders.customer_id=customers.customer_id
         WHERE orders.status='cancelled';
 
