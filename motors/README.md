@@ -195,16 +195,26 @@
 
 
 
-<details><summary>Question 3 : </summary>
+<details><summary>Question 3 : Add new employee/saleman with following details:- 
+Emp Id: 15657
+First Name: Lakshmi
+Last Name: Roy
+Extension: x4065
+Email: lakshiroy1@lcomotors.com
+Office Code: 4
+Reports To: 1088
+Job Title: Sales Rep
+</summary>
   
   ## QUERY : 
 ``` 
-
+       INSERT INTO employees(employee_id,first_name,last_name,extension,email,office_code,reports_to,job_title) VALUE(15657,'Lakshmi','Roy','x4065','lakshiroy1@lcomotors.com',4,1088,'Sales Rep');
+       
 ```
 
 ## RESULT 
 ```
-
+Query OK, 1 row affected (0.00 sec)
 ```
 </details>
 
