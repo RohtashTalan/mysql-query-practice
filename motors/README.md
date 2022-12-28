@@ -44,35 +44,11 @@
         SELECT * FROM customers
         INNER JOIN payments ON payments.customer_id=customers.customer_id
         WHERE payments.amount BETWEEN 5000 AND 35000;
-        
+
 ```
 
 ## RESULT 
 ```
-+-------------+-------------------------+-----------+------------+----------------+---------------------------+---------------+------------+-------+-------------+-------------+-------------------+--------------+----------+------------+---------------+--------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-| customer_id | customer_name           | last_name | first_name | phone          | address_line1             | address_line2 | city       | state | postal_code | country     | sales_employee_id | credit_limit | order_id | order_date | required_date | shipped_date | status    | comments                                                                                               
-                                                                                       | customer_id |
-+-------------+-------------------------+-----------+------------+----------------+---------------------------+---------------+------------+-------+-------------+-------------+-------------------+--------------+----------+------------+---------------+--------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|         448 | Scandinavian Gift Ideas | Larsson   | Martha     | 0695-34 6555   | Åkergatan 24              | NULL          | Bräcke     | NULL  | S-844 67    | Sweden      |              1504 |    116400.00 |    10167 | 2017-10-23 | 2017-10-30    | NULL         | Cancelled | Customer called to cancel. The warehouse was notified in time and the order didn't ship. They have a new VP of Sales and are shifting their sales model. Our VP of Sales should contact them. |         448 |
-|         496 | Kelly's Gift Shop       | Snowden   | Tony       | +64 9 5555500  | Arenales 1938 3'A'        | NULL          | Auckland   | NULL  | NULL        | New Zealand |              1612 |    110000.00 |    10179 | 2017-11-11 | 2017-11-17    | 2017-11-13   | Cancelled | Customer cancelled due to urgent budgeting issues. Must be cautious when dealing with them in the future. Since order shipped already we must discuss who would cover the shipping charges.   |         496 |
-|         131 | Land of Toys Inc.       | Lee       | Kwai       | 2125557818     | 897 Long Airport Avenue   | NULL          | NYC        | NY    | 10022       | USA         |              1323 |    114900.00 |    10248 | 2018-05-07 | 2018-05-14    | NULL         | Cancelled | Order was mistakenly placed. The warehouse noticed the lack of documentation.                          
-                                                                                       |         131 |
-|         201 | UK Collectables, Ltd.   | Devon     | Elizabeth  | (171) 555-2282 | 12, Berkeley Gardens Blvd | NULL          | Liverpool  | NULL  | WX1 6LT     | UK          |              1501 |     92700.00 |    10253 | 2018-06-01 | 2018-06-09    | 2018-06-02   | Cancelled | Customer disputed the order and we agreed to cancel it. We must be more cautions with this customer going forward, since they are very hard to please. We must cover the shipping fees.       |         201 |
-|         357 | GiftsForHim.com         | MacKinlay | Wales      | 64-9-3763555   | 199 Great North Road      | NULL          | Auckland   | NULL  | NULL        | New Zealand |              1612 |     77700.00 |    10260 | 2018-06-16 | 2018-06-22    | NULL         | Cancelled | Customer heard complaints from their customers and called to cancel this order. Will notify the Sales Manager.                                                                                |         357 |
-|         141 | Euro+ Shopping Channel  | Freyre    | Diego      | (91) 555 94 44 | C/ Moralzarzal, 86        | NULL          | Madrid     | NULL  | 28034       | Spain       |              1370 |    227600.00 |    10262 | 2018-06-24 | 2018-07-01    | NULL         | Cancelled | This customer found a better offer from one of our competitors. Will call back to renegotiate.         
-                                                                                       |         141 |
-+-------------+-------------------------+-----------+------------+----------------+---------------------------+---------------+------------+-------+-------------+-------------+-------------------+--------------+----------+------------+---------------+--------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-6 rows in set (0.00 sec)
-
-mysql> source ./motors/ans.sql;
-Database changed
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INNER JOIN orders ON payments.customer_id=customers.customer_id
-        WHERE pa' at line 1
-mysql> source ./motors/ans.sql;
-Database changed
-ERROR 1054 (42S22): Unknown column 'payments.amount' in 'where clause'
-mysql> source ./motors/ans.sql;
-Database changed
 +-------------+------------------------------------+-------------+------------+--------------------+-------------------------------+-----------------------+----------------+---------------+-------------+-------------+-------------------+--------------+-------------+--------------+--------------+----------+
 | customer_id | customer_name                      | last_name   | first_name | phone              | address_line1                 | address_line2         | city           | state         | postal_code | country     | sales_employee_id | credit_limit | customer_id | check_number | payment_date | amount   |
 +-------------+------------------------------------+-------------+------------+--------------------+-------------------------------+-----------------------+----------------+---------------+-------------+-------------+-------------------+--------------+-------------+--------------+--------------+----------+
