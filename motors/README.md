@@ -676,15 +676,1000 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 8 : </summary>
+<details><summary>Question 8 : how would you fetch details of products with less than30 orders?</summary>
   
   ## QUERY : 
 ``` 
+       SELECT products.product_name,products.product_line,products.product_scale,products.product_vendor FROM products
+       INNER JOIN orderdetails ON orderdetails.product_code=products.product_code
+       WHERE orderdetails.quantity_ordered <30;
 
 ```
 
 ## RESULT 
 ```
+
++---------------------------------------------+------------------+---------------+---------------------------+
+| product_name                                | product_line     | product_scale | product_vendor            |
++---------------------------------------------+------------------+---------------+---------------------------+
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1913 Ford Model T Speedster                 | Vintage Cars     | 1:18          | Carousel DieCast Legends  |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1913 Ford Model T Speedster                 | Vintage Cars     | 1:18          | Carousel DieCast Legends  |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1958 Chevy Corvette Limited Edition         | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| American Airlines: MD-11S                   | Planes           | 1:700         | Second Gear Diecast       |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| American Airlines: MD-11S                   | Planes           | 1:700         | Second Gear Diecast       |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1930 Buick Marquette Phaeton                | Vintage Cars     | 1:50          | Studio M Art Models       |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1958 Chevy Corvette Limited Edition         | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1948 Porsche Type 356 Roadster              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 2001 Ferrari Enzo                           | Classic Cars     | 1:12          | Second Gear Diecast       |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| 1930 Buick Marquette Phaeton                | Vintage Cars     | 1:50          | Studio M Art Models       |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1958 Chevy Corvette Limited Edition         | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1937 Lincoln Berline                        | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 2001 Ferrari Enzo                           | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1937 Lincoln Berline                        | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1913 Ford Model T Speedster                 | Vintage Cars     | 1:18          | Carousel DieCast Legends  |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| 1930 Buick Marquette Phaeton                | Vintage Cars     | 1:50          | Studio M Art Models       |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1937 Lincoln Berline                        | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1958 Chevy Corvette Limited Edition         | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1937 Lincoln Berline                        | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1913 Ford Model T Speedster                 | Vintage Cars     | 1:18          | Carousel DieCast Legends  |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| The USS Constitution Ship                   | Ships            | 1:700         | Red Start Diecast         |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1993 Mazda RX-7                             | Classic Cars     | 1:18          | Highway 66 Mini Classics  |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 18th century schooner                       | Ships            | 1:24          | Carousel DieCast Legends  |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1917 Grand Touring Sedan                    | Vintage Cars     | 1:18          | Welly Diecast Productions |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1958 Chevy Corvette Limited Edition         | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1948 Porsche Type 356 Roadster              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 18th century schooner                       | Ships            | 1:24          | Carousel DieCast Legends  |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 1930 Buick Marquette Phaeton                | Vintage Cars     | 1:50          | Studio M Art Models       |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 18th century schooner                       | Ships            | 1:24          | Carousel DieCast Legends  |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1997 BMW F650 ST                            | Motorcycles      | 1:32          | Exoto Designs             |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1965 Aston Martin DB5                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1948 Porsche Type 356 Roadster              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1969 Corvair Monza                          | Classic Cars     | 1:18          | Welly Diecast Productions |
+| 1957 Chevy Pickup                           | Trucks and Buses | 1:12          | Exoto Designs             |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| The USS Constitution Ship                   | Ships            | 1:700         | Red Start Diecast         |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1948 Porsche Type 356 Roadster              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1956 Porsche 356A Coupe                     | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 18th century schooner                       | Ships            | 1:24          | Carousel DieCast Legends  |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1966 Shelby Cobra 427 S/C                   | Classic Cars     | 1:24          | Carousel DieCast Legends  |
+| 1982 Ducati 996 R                           | Motorcycles      | 1:32          | Gearbox Collectibles      |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1949 Jaguar XK 120                          | Classic Cars     | 1:24          | Classic Metal Creations   |
+| 1952 Citroen-15CV                           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1972 Alfa Romeo GTA                         | Classic Cars     | 1:10          | Motor City Art Classics   |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| The USS Constitution Ship                   | Ships            | 1:700         | Red Start Diecast         |
+| The Queen Mary                              | Ships            | 1:700         | Welly Diecast Productions |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| American Airlines: MD-11S                   | Planes           | 1:700         | Second Gear Diecast       |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1969 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1997 BMW R 1100 S                           | Motorcycles      | 1:24          | Autoart Studio Design     |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1995 Honda Civic                            | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1970 Triumph Spitfire                       | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1928 British Royal Navy Airplane            | Planes           | 1:24          | Classic Metal Creations   |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| The Mayflower                               | Ships            | 1:700         | Studio M Art Models       |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1996 Moto Guzzi 1100i                       | Motorcycles      | 1:10          | Highway 66 Mini Classics  |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| 1900s Vintage Tri-Plane                     | Planes           | 1:24          | Unimax Art Galleries      |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1948 Porsche 356-A Roadster                 | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1971 Alpine Renault 1600s                   | Classic Cars     | 1:24          | Welly Diecast Productions |
+| 1974 Ducati 350 Mk3 Desmo                   | Motorcycles      | 1:32          | Second Gear Diecast       |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1939 Chevrolet Deluxe Coupe                 | Vintage Cars     | 1:24          | Motor City Art Classics   |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1934 Ford V8 Coupe                          | Vintage Cars     | 1:18          | Min Lin Diecast           |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1940s Ford truck                            | Trucks and Buses | 1:18          | Motor City Art Classics   |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1962 City of Detroit Streetcar              | Trains           | 1:50          | Classic Metal Creations   |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1940 Ford Delivery Sedan                    | Vintage Cars     | 1:24          | Carousel DieCast Legends  |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| Pont Yacht                                  | Ships            | 1:72          | Unimax Art Galleries      |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 1936 Harley Davidson El Knucklehead         | Motorcycles      | 1:18          | Welly Diecast Productions |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1960 BSA Gold Star DBD34                    | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1970 Plymouth Hemi Cuda                     | Classic Cars     | 1:12          | Studio M Art Models       |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1957 Vespa GS150                            | Motorcycles      | 1:18          | Studio M Art Models       |
+| 1911 Ford Town Car                          | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1999 Indy 500 Monte Carlo SS                | Classic Cars     | 1:18          | Red Start Diecast         |
+| 1937 Lincoln Berline                        | Vintage Cars     | 1:18          | Motor City Art Classics   |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Ford Thunderbird                       | Classic Cars     | 1:18          | Studio M Art Models       |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 1958 Setra Bus                              | Trucks and Buses | 1:12          | Welly Diecast Productions |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1962 Volkswagen Microbus                    | Trucks and Buses | 1:24          | Autoart Studio Design     |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1964 Mercedes Tour Bus                      | Trucks and Buses | 1:18          | Unimax Art Galleries      |
+| 1903 Ford Model A                           | Vintage Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1904 Buick Runabout                         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1992 Porsche Cayenne Turbo Silver           | Classic Cars     | 1:24          | Exoto Designs             |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 18th century schooner                       | Ships            | 1:24          | Carousel DieCast Legends  |
+| The Schooner Bluenose                       | Ships            | 1:700         | Autoart Studio Design     |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| 1941 Chevrolet Special Deluxe Cabriolet     | Vintage Cars     | 1:18          | Exoto Designs             |
+| HMS Bounty                                  | Ships            | 1:700         | Unimax Art Galleries      |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 1930 Buick Marquette Phaeton                | Vintage Cars     | 1:50          | Studio M Art Models       |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1928 Mercedes-Benz SSK                      | Vintage Cars     | 1:18          | Gearbox Collectibles      |
+| 2002 Yamaha YZR M1                          | Motorcycles      | 1:50          | Autoart Studio Design     |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1938 Cadillac V-16 Presidential Limousine   | Vintage Cars     | 1:24          | Classic Metal Creations   |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1982 Camaro Z28                             | Classic Cars     | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| Collectable Wooden Train                    | Trains           | 1:18          | Carousel DieCast Legends  |
+| 1912 Ford Model T Delivery Wagon            | Vintage Cars     | 1:24          | Min Lin Diecast           |
+| The USS Constitution Ship                   | Ships            | 1:700         | Red Start Diecast         |
+| 1999 Yamaha Speed Boat                      | Ships            | 1:18          | Min Lin Diecast           |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| F/A 18 Hornet 1/72                          | Planes           | 1:72          | Motor City Art Classics   |
+| 2017 Harley-Davidson Eagle Drag Bike        | Motorcycles      | 1:10          | Red Start Diecast         |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| Boeing X-32A JSF                            | Planes           | 1:72          | Motor City Art Classics   |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| ATA: B757-300                               | Planes           | 1:700         | Highway 66 Mini Classics  |
+| 1969 Harley Davidson Ultimate Chopper       | Motorcycles      | 1:10          | Min Lin Diecast           |
+| 1982 Ducati 900 Monster                     | Motorcycles      | 1:24          | Highway 66 Mini Classics  |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1932 Alfa Romeo 8C2300 Spider Sport         | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1970 Chevy Chevelle SS 454                  | Classic Cars     | 1:24          | Unimax Art Galleries      |
+| 1969 Chevrolet Camaro Z28                   | Classic Cars     | 1:24          | Exoto Designs             |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1932 Model A Ford J-Coupe                   | Vintage Cars     | 1:18          | Autoart Studio Design     |
+| 1952 Alpine Renault 1300                    | Classic Cars     | 1:10          | Classic Metal Creations   |
+| 1962 LanciaA Delta 16V                      | Classic Cars     | 1:10          | Second Gear Diecast       |
+| 1940 Ford Pickup Truck                      | Trucks and Buses | 1:18          | Studio M Art Models       |
+| 1980?s GM Manhattan Express                 | Trucks and Buses | 1:32          | Motor City Art Classics   |
+| 1996 Peterbilt 379 Stake Bed with Outrigger | Trucks and Buses | 1:32          | Red Start Diecast         |
+| 1970 Dodge Coronet                          | Classic Cars     | 1:24          | Highway 66 Mini Classics  |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
+| 1969 Ford Falcon                            | Classic Cars     | 1:12          | Second Gear Diecast       |
+| 1950's Chicago Surface Lines Streetcar      | Trains           | 1:32          | Gearbox Collectibles      |
+| The Titanic                                 | Ships            | 1:700         | Carousel DieCast Legends  |
+| 1900s Vintage Bi-Plane                      | Planes           | 1:24          | Autoart Studio Design     |
+| 1937 Horch 930V Limousine                   | Vintage Cars     | 1:24          | Autoart Studio Design     |
+| 1980s Black Hawk Helicopter                 | Planes           | 1:18          | Red Start Diecast         |
+| P-51-D Mustang                              | Planes           | 1:72          | Gearbox Collectibles      |
+| Corsair F4U ( Bird Cage)                    | Planes           | 1:24          | Second Gear Diecast       |
+| 1928 Ford Phaeton Deluxe                    | Vintage Cars     | 1:32          | Highway 66 Mini Classics  |
+| American Airlines: B767-300                 | Planes           | 1:700         | Min Lin Diecast           |
+| America West Airlines B757-200              | Planes           | 1:700         | Motor City Art Classics   |
+| 2002 Suzuki XREO                            | Motorcycles      | 1:12          | Unimax Art Galleries      |
+| 1969 Dodge Super Bee                        | Classic Cars     | 1:18          | Min Lin Diecast           |
+| 1976 Ford Gran Torino                       | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1957 Corvette Convertible                   | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1961 Chevrolet Impala                       | Classic Cars     | 1:18          | Classic Metal Creations   |
+| 1968 Ford Mustang                           | Classic Cars     | 1:12          | Autoart Studio Design     |
+| 1968 Dodge Charger                          | Classic Cars     | 1:12          | Welly Diecast Productions |
+| 1982 Lamborghini Diablo                     | Classic Cars     | 1:24          | Second Gear Diecast       |
+| 2002 Chevy Corvette                         | Classic Cars     | 1:24          | Gearbox Collectibles      |
+| 1936 Mercedes Benz 500k Roadster            | Vintage Cars     | 1:24          | Red Start Diecast         |
+| 1936 Mercedes-Benz 500K Special Roadster    | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1913 Ford Model T Speedster                 | Vintage Cars     | 1:18          | Carousel DieCast Legends  |
+| 18th Century Vintage Horse Carriage         | Vintage Cars     | 1:18          | Red Start Diecast         |
+| 1917 Maxwell Touring Car                    | Vintage Cars     | 1:18          | Exoto Designs             |
+| 1936 Chrysler Airflow                       | Vintage Cars     | 1:24          | Second Gear Diecast       |
+| 1939 Cadillac Limousine                     | Vintage Cars     | 1:18          | Studio M Art Models       |
+| 1998 Chrysler Plymouth Prowler              | Classic Cars     | 1:18          | Gearbox Collectibles      |
+| 1926 Ford Fire Engine                       | Trucks and Buses | 1:18          | Carousel DieCast Legends  |
+| 1992 Ferrari 360 Spider red                 | Classic Cars     | 1:18          | Unimax Art Galleries      |
+| 1954 Greyhound Scenicruiser                 | Trucks and Buses | 1:32          | Classic Metal Creations   |
+| Diamond T620 Semi-Skirted Tanker            | Trucks and Buses | 1:50          | Highway 66 Mini Classics  |
++---------------------------------------------+------------------+---------------+---------------------------+
+976 rows in set (0.00 sec)
 
 ```
 </details>
