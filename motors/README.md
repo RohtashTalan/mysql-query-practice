@@ -221,15 +221,19 @@ Query OK, 1 row affected (0.00 sec)
 
 
 
-<details><summary>Question 4 : </summary>
+<details><summary>Question 4 : Assign the new employee to the customer whose phone is 2125557413.</summary>
   
   ## QUERY : 
 ``` 
-
+  UPDATE customers SET sales_employee_id=(SELECT employee_id FROM employees WHERE employee_id=15657) WHERE phone='2125557413';
+  
 ```
 
 ## RESULT 
 ```
+
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 ```
 </details>
