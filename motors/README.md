@@ -241,15 +241,376 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 5 : </summary>
+<details><summary>Question 5 : Write a SQL query to fetch shipped motorcycles.</summary>
   
   ## QUERY : 
 ``` 
-
+       SELECT products.product_name,products.product_line,products.product_scale,products.product_vendor, orders.status FROM products
+       INNER JOIN orderdetails ON orderdetails.product_code=products.product_code
+       INNER JOIN orders ON orders.order_id=orderdetails.order_id
+       WHERE orders.status='shipped' AND products.product_line='Motorcycles';
+       
 ```
 
 ## RESULT 
 ```
+
++---------------------------------------+--------------+---------------+---------------------------+---------+
+| product_name                          | product_line | product_scale | product_vendor            | status  |
++---------------------------------------+--------------+---------------+---------------------------+---------+
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1969 Harley Davidson Ultimate Chopper | Motorcycles  | 1:10          | Min Lin Diecast           | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 1996 Moto Guzzi 1100i                 | Motorcycles  | 1:10          | Highway 66 Mini Classics  | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2017 Harley-Davidson Eagle Drag Bike  | Motorcycles  | 1:10          | Red Start Diecast         | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 2002 Suzuki XREO                      | Motorcycles  | 1:12          | Unimax Art Galleries      | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1936 Harley Davidson El Knucklehead   | Motorcycles  | 1:18          | Welly Diecast Productions | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1957 Vespa GS150                      | Motorcycles  | 1:18          | Studio M Art Models       | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1997 BMW R 1100 S                     | Motorcycles  | 1:24          | Autoart Studio Design     | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1960 BSA Gold Star DBD34              | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1982 Ducati 900 Monster               | Motorcycles  | 1:24          | Highway 66 Mini Classics  | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1997 BMW F650 ST                      | Motorcycles  | 1:32          | Exoto Designs             | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1982 Ducati 996 R                     | Motorcycles  | 1:32          | Gearbox Collectibles      | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 1974 Ducati 350 Mk3 Desmo             | Motorcycles  | 1:32          | Second Gear Diecast       | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
+| 2002 Yamaha YZR M1                    | Motorcycles  | 1:50          | Autoart Studio Design     | Shipped |
++---------------------------------------+--------------+---------------+---------------------------+---------+
+351 rows in set (0.01 sec)
 
 ```
 </details>
