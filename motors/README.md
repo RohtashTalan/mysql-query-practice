@@ -646,15 +646,29 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 7 : </summary>
+<details><summary>Question 7 : How would you fetch the details of customers whose orders are in process?</summary>
   
   ## QUERY : 
 ``` 
+       SELECT * FROM customers
+       INNER JOIN orders ON orders.customer_id=customers.customer_id
+       WHERE orders.status='In Process';
 
 ```
 
 ## RESULT 
 ```
++-------------+------------------------------+-----------+------------+-----------------+------------------------------+-----------------+------------+-------+-------------+-----------+-------------------+--------------+----------+------------+---------------+--------------+------------+-----------------------------------------------------+-------------+
+| customer_id | customer_name                | last_name | first_name | phone           | address_line1                | address_line2   | city       | state | postal_code | country   | sales_employee_id | credit_limit | order_id | order_date | required_date | shipped_date | status     | comments                                            | customer_id |
++-------------+------------------------------+-----------+------------+-----------------+------------------------------+-----------------+------------+-------+-------------+-----------+-------------------+--------------+----------+------------+---------------+--------------+------------+-----------------------------------------------------+-------------+
+|         282 | Souveniers And Things Co.    | Huxley    | Adrian     | +61 2 9495 8555 | Monitor Money Building       | 815 Pacific Hwy | Chatswood  | NSW   | 2067        | Australia |              1611 |     93300.00 |    10420 | 2019-05-29 | 2019-06-07    | NULL         | In Process | NULL                                                |         282 |
+|         124 | Mini Gifts Distributors Ltd. | Nelson    | Susan      | 4155551450      | 5677 Strong St.              | NULL            | San Rafael | CA    | 97562       | USA       |              1165 |    210500.00 |    10421 | 2019-05-29 | 2019-06-06    | NULL         | In Process | Custom shipping instructions were sent to warehouse |         124 |
+|         157 | Diecast Classics Inc.        | Leong     | Kelvin     | 2155551555      | 7586 Pompton St.             | NULL            | Allentown  | PA    | 70267       | USA       |              1216 |    100600.00 |    10422 | 2019-05-30 | 2019-06-11    | NULL         | In Process | NULL                                                |         157 |
+|         314 | Petit Auto                   | Dewey     | Catherine  | (02) 5554 67    | Rue Joseph-Bens 532          | NULL            | Bruxelles  | NULL  | B-1180      | Belgium   |              1401 |     79900.00 |    10423 | 2019-05-30 | 2019-06-05    | NULL         | In Process | NULL                                                |         314 |
+|         141 | Euro+ Shopping Channel       | Freyre    | Diego      | (91) 555 94 44  | C/ Moralzarzal, 86           | NULL            | Madrid     | NULL  | 28034       | Spain     |              1370 |    227600.00 |    10424 | 2019-05-31 | 2019-06-08    | NULL         | In Process | NULL                                                |         141 |
+|         119 | La Rochelle Gifts            | Labrune   | Janine     | 40.67.8555      | 67, rue des Cinquante Otages | NULL            | Nantes     | NULL  | 44000       | France    |              1370 |    118200.00 |    10425 | 2019-05-31 | 2019-06-07    | NULL         | In Process | NULL                                                |         119 |
++-------------+------------------------------+-----------+------------+-----------------+------------------------------+-----------------+------------+-------+-------------+-----------+-------------------+--------------+----------+------------+---------------+--------------+------------+-----------------------------------------------------+-------------+
+6 rows in set (0.01 sec)
 
 ```
 </details>
