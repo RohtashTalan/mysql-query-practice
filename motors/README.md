@@ -249,7 +249,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
        INNER JOIN orderdetails ON orderdetails.product_code=products.product_code
        INNER JOIN orders ON orders.order_id=orderdetails.order_id
        WHERE orders.status='shipped' AND products.product_line='Motorcycles';
-       
+
 ```
 
 ## RESULT 
@@ -618,15 +618,27 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 6 : </summary>
+<details><summary>Question 6 : Write a SQL query to get details of all employees/salesmen in the office lacted in Sydney?</summary>
   
   ## QUERY : 
 ``` 
+   SELECT * FROM employees
+       INNER JOIN offices ON offices.office_code=employees.office_code
+       WHERE offices.city='Sydney';
 
 ```
 
 ## RESULT 
 ```
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+----------------------+-------------+--------+-----------------+-----------------------+---------------+-------+-----------+-------------+-----------+
+| employee_id | last_name | first_name | extension | email                    | office_code | reports_to | job_title            | office_code | city   | phone           | address_line1         | address_line2 | state | country   | postal_code | territory |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+----------------------+-------------+--------+-----------------+-----------------------+---------------+-------+-----------+-------------+-----------+
+|        1088 | Patterson | William    | x4871     | wpatterson@lcomotors.com | 6           |       1056 | Sales Manager (APAC) | 6           | Sydney | +61 2 9264 2451 | 5-11 Wentworth Avenue | Floor #2      | NULL  | Australia | NSW 2010    | APAC      |
+|        1611 | Fixter    | Andy       | x101      | afixter@lcomotors.com    | 6           |       1088 | Sales Rep            | 6           | Sydney | +61 2 9264 2451 | 5-11 Wentworth Avenue | Floor #2      | NULL  | Australia | NSW 2010    | APAC      |
+|        1612 | Marsh     | Peter      | x102      | pmarsh@lcomotors.com     | 6           |       1088 | Sales Rep            | 6           | Sydney | +61 2 9264 2451 | 5-11 Wentworth Avenue | Floor #2      | NULL  | Australia | NSW 2010    | APAC      |
+|        1619 | King      | Tom        | x103      | tking@lcomotors.com      | 6           |       1088 | Sales Rep            | 6           | Sydney | +61 2 9264 2451 | 5-11 Wentworth Avenue | Floor #2      | NULL  | Australia | NSW 2010    | APAC      |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+----------------------+-------------+--------+-----------------+-----------------------+---------------+-------+-----------+-------------+-----------+
+4 rows in set (0.01 sec)
 
 ```
 </details>
