@@ -2120,15 +2120,25 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 13 : </summary>
+<details><summary>Question 13 : How many customers and from Finland who placed orders.</summary>
   
   ## QUERY : 
 ``` 
+     SELECT COUNT(*) FROM orders 
+        INNER JOIN customers ON customers.customer_id=orders.customer_id
+        WHERE customers.country='Finland';
+
 
 ```
 
 ## RESULT 
 ```
++----------+
+| COUNT(*) |
++----------+
+|        9 |
++----------+
+1 row in set (0.00 sec)
 
 ```
 </details>
