@@ -2036,15 +2036,23 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 11 : </summary>
+<details><summary>Question 11 : Get the details of the customer who made the maximum payment.</summary>
   
   ## QUERY : 
 ``` 
-
+        SELECT customers.* FROM customers 
+        INNER JOIN payments ON payments.customer_id=customers.customer_id
+        ORDER BY payments.amount DESC LIMIT 1;
 ```
 
 ## RESULT 
 ```
++-------------+------------------------+-----------+------------+----------------+--------------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+| customer_id | customer_name          | last_name | first_name | phone          | address_line1      | address_line2 | city   | state | postal_code | country | sales_employee_id | credit_limit |
++-------------+------------------------+-----------+------------+----------------+--------------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+|         141 | Euro+ Shopping Channel | Freyre    | Diego      | (91) 555 94 44 | C/ Moralzarzal, 86 | NULL          | Madrid | NULL  | 28034       | Spain   |              1370 |    227600.00 |
++-------------+------------------------+-----------+------------+----------------+--------------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+1 row in set (0.01 sec)
 
 ```
 </details>
