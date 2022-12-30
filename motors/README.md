@@ -1695,15 +1695,340 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 10 : </summary>
+<details><summary>Question 10 : Fetch the details of salesmen/employees dealing with customers whose orders are resolved.</summary>
   
   ## QUERY : 
 ``` 
+     SELECT employees.employee_id, CONCAT(employees.first_name, ' ',employees.last_name) AS employees_name, employees.email, employees.job_title, employees.extension  FROM employees 
+        INNER JOIN customers ON employees.employee_id=customers.sales_employee_id
+        INNER JOIN orders ON orders.customer_id=customers.customer_id
+        WHERE orders.status <> 'IN Process';
 
 ```
 
 ## RESULT 
 ```
++-------------+------------------+--------------------------+-----------+-----------+
+| employee_id | employees_name   | email                    | job_title | extension |
++-------------+------------------+--------------------------+-----------+-----------+
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1165 | Leslie Jennings  | ljennings@lcomotors.com  | Sales Rep | x3291     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1166 | Leslie Thompson  | lthompson@lcomotors.com  | Sales Rep | x4065     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1188 | Julie Firrelli   | jfirrelli@lcomotors.com  | Sales Rep | x2173     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1216 | Steve Patterson  | spatterson@lcomotors.com | Sales Rep | x4334     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1286 | Foon Yue Tseng   | ftseng@lcomotors.com     | Sales Rep | x2248     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1323 | George Vanauf    | gvanauf@lcomotors.com    | Sales Rep | x4102     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1337 | Loui Bondur      | lbondur@lcomotors.com    | Sales Rep | x6493     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1370 | Gerard Hernandez | ghernande@lcomotors.com  | Sales Rep | x2028     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1401 | Pamela Castillo  | pcastillo@lcomotors.com  | Sales Rep | x2759     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1501 | Larry Bott       | lbott@lcomotors.com      | Sales Rep | x2311     |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1504 | Barry Jones      | bjones@lcomotors.com     | Sales Rep | x102      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1611 | Andy Fixter      | afixter@lcomotors.com    | Sales Rep | x101      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1612 | Peter Marsh      | pmarsh@lcomotors.com     | Sales Rep | x102      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1621 | Mami Nishi       | mnishi@lcomotors.com     | Sales Rep | x101      |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
+|        1702 | Martin Gerard    | mgerard@lcomotors.com    | Sales Rep | x2312     |
++-------------+------------------+--------------------------+-----------+-----------+
+316 rows in set (0.01 sec)
 
 ```
 </details>
