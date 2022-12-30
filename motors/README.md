@@ -1677,15 +1677,17 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 9 : </summary>
+<details><summary>Question 9 : It is noted that the payment (check number OM314922) was actually 2575. Update the record.</summary>
   
   ## QUERY : 
 ``` 
-
+ UPDATE payments SET amount=2575 WHERE check_number='OM314933';
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 ```
 </details>
