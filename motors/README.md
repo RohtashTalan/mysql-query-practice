@@ -2327,15 +2327,19 @@ Query OK, 1 row affected (0.00 sec)
 
 
 
-<details><summary>Question 20 : </summary>
+<details><summary>Question 20 : A new payment was done by a customer (id:119). Insert the below details.
+Check number: OM314944
+Payment date: <today date>
+Amount: 33789.55</summary>
   
   ## QUERY : 
 ``` 
-
+   INSERT INTO payments(customer_id, payment_date, amount, check_number) VALUE(119, CURRENT_DATE(), 33789.55, 'OM314944');
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.02 sec)
 
 ```
 </details>
