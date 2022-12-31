@@ -2287,15 +2287,39 @@ Query OK, 1 row affected (0.00 sec)
 
 
 
-<details><summary>Question 19 : </summary>
+<details><summary>Question 19 : Fetch details of employees who were reported for the payments made by the customers between june 2018 and july 2018</summary>
   
   ## QUERY : 
 ``` 
+        SELECT employees.*, payments.payment_date FROM employees
+        INNER JOIN customers ON customers.sales_employee_id=employees.employee_id
+        INNER JOIN payments ON payments.customer_id=customers.customer_id
+        WHERE payments.payment_date BETWEEN '2018-06-01' AND '2018-07-31' ORDER BY payments.payment_date;
 
 ```
 
 ## RESULT 
 ```
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+-----------+--------------+
+| employee_id | last_name | first_name | extension | email                    | office_code | reports_to | job_title | payment_date |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+-----------+--------------+
+|        1501 | Bott      | Larry      | x2311     | lbott@lcomotors.com      | 7           |       1102 | Sales Rep | 2018-06-15   |
+|        1337 | Bondur    | Loui       | x6493     | lbondur@lcomotors.com    | 4           |       1102 | Sales Rep | 2018-06-17   |
+|        1370 | Hernandez | Gerard     | x2028     | ghernande@lcomotors.com  | 4           |       1102 | Sales Rep | 2018-06-21   |
+|        1621 | Nishi     | Mami       | x101      | mnishi@lcomotors.com     | 5           |       1056 | Sales Rep | 2018-06-21   |
+|        1165 | Jennings  | Leslie     | x3291     | ljennings@lcomotors.com  | 1           |       1143 | Sales Rep | 2018-06-21   |
+|        1612 | Marsh     | Peter      | x102      | pmarsh@lcomotors.com     | 6           |       1088 | Sales Rep | 2018-06-24   |
+|        1286 | Tseng     | Foon Yue   | x2248     | ftseng@lcomotors.com     | 3           |       1143 | Sales Rep | 2018-07-01   |
+|        1401 | Castillo  | Pamela     | x2759     | pcastillo@lcomotors.com  | 4           |       1102 | Sales Rep | 2018-07-03   |
+|        1612 | Marsh     | Peter      | x102      | pmarsh@lcomotors.com     | 6           |       1088 | Sales Rep | 2018-07-07   |
+|        1370 | Hernandez | Gerard     | x2028     | ghernande@lcomotors.com  | 4           |       1102 | Sales Rep | 2018-07-09   |
+|        1323 | Vanauf    | George     | x4102     | gvanauf@lcomotors.com    | 3           |       1143 | Sales Rep | 2018-07-10   |
+|        1216 | Patterson | Steve      | x4334     | spatterson@lcomotors.com | 2           |       1143 | Sales Rep | 2018-07-11   |
+|        1401 | Castillo  | Pamela     | x2759     | pcastillo@lcomotors.com  | 4           |       1102 | Sales Rep | 2018-07-18   |
+|        1612 | Marsh     | Peter      | x102      | pmarsh@lcomotors.com     | 6           |       1088 | Sales Rep | 2018-07-25   |
+|        1611 | Fixter    | Andy       | x101      | afixter@lcomotors.com    | 6           |       1088 | Sales Rep | 2018-07-28   |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+-----------+--------------+
+15 rows in set (0.00 sec)
 
 ```
 </details>
