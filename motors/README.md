@@ -2206,15 +2206,23 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 16 : </summary>
+<details><summary>Question 16 : How many orders shipped to Belgium in 2018?</summary>
   
   ## QUERY : 
 ``` 
-
+        SELECT COUNT(*) FROM orders
+        INNER JOIN customers ON customers.customer_id=orders.customer_id
+        WHERE customers.country='Belgium' AND  YEAR(orders.shipped_date) ='2018';
 ```
 
 ## RESULT 
 ```
++----------+
+| COUNT(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.00 sec)
 
 ```
 </details>
