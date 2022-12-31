@@ -2171,15 +2171,34 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 15 : </summary>
+<details>
+<summary>Question 15 : Get the details of the customer and payments they made between may 2019 and june 2019.</summary>
   
   ## QUERY : 
 ``` 
+        SELECT customers.*, payments.payment_date FROM customers
+        INNER JOIN payments ON payments.customer_id=customers.customer_id
+        WHERE payments.payment_date BETWEEN '2019-05-01 00:00:00' AND '2019-06-01 00:00:00';
+
 
 ```
 
 ## RESULT 
 ```
++-------------+------------------------------+-----------+-------------+------------------+-------------------------------+---------------+-------------+--------+-------------+-------------+-------------------+--------------+--------------+
+| customer_id | customer_name                | last_name | first_name  | phone            | address_line1                 | address_line2 | city        | state  | postal_code | country     | sales_employee_id | credit_limit | payment_date |
++-------------+------------------------------+-----------+-------------+------------------+-------------------------------+---------------+-------------+--------+-------------+-------------+-------------------+--------------+--------------+
+|         141 | Euro+ Shopping Channel       | Freyre    | Diego       | (91) 555 94 44   | C/ Moralzarzal, 86            | NULL          | Madrid      | NULL   | 28034       | Spain       |              1370 |    227600.00 | 2019-05-19   |
+|         175 | Gift Depot Inc.              | King      | Julie       | 2035552570       | 25593 South Bay Ln.           | NULL          | Bridgewater | CT     | 97562       | USA         |              1323 |     84300.00 | 2019-05-19   |
+|         209 | Mini Caravy                  | Citeaux   | Frédérique  | 88.60.1555       | 24, place Kléber              | NULL          | Strasbourg  | NULL   | 67000       | France      |              1370 |     53800.00 | 2019-05-03   |
+|         233 | Québec Home Shopping Network | Fresnière | Jean        | (514) 555-8054   | 43 rue St. Laurent            | NULL          | Montréal    | Québec | H1J 1C3     | Canada      |              1286 |     48700.00 | 2019-05-20   |
+|         250 | Lyon Souveniers              | Da Silva  | Daniel      | +33 1 46 62 7555 | 27 rue du Colonel Pierre Avia | NULL          | Paris       | NULL   | 75508       | France      |              1337 |     68100.00 | 2019-05-17   |
+|         323 | Down Under Souveniers, Inc   | Graham    | Mike        | +64 9 312 5555   | 162-164 Grafton Road          | Level 2       | Auckland    | NULL   | NULL        | New Zealand |              1612 |     88000.00 | 2019-05-23   |
+|         398 | Tokyo Collectables, Ltd      | Shimamura | Akiko       | +81 3 3584 0555  | 2-2-8 Roppongi                | NULL          | Minato-ku   | Tokyo  | 106-0032    | Japan       |              1621 |     94400.00 | 2019-05-18   |
+|         452 | Mini Auto Werke              | Mendel    | Roland      | 7675-3555        | Kirchgasse 6                  | NULL          | Graz        | NULL   | 8010        | Austria     |              1401 |     45300.00 | 2019-05-03   |
+|         496 | Kelly's Gift Shop            | Snowden   | Tony        | +64 9 5555500    | Arenales 1938 3'A'            | NULL          | Auckland    | NULL   | NULL        | New Zealand |              1612 |    110000.00 | 2019-05-25   |
++-------------+------------------------------+-----------+-------------+------------------+-------------------------------+---------------+-------------+--------+-------------+-------------+-------------------+--------------+--------------+
+9 rows in set (0.00 sec)
 
 ```
 </details>
