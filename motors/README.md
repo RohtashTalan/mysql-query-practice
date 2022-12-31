@@ -2376,15 +2376,120 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 22 : </summary>
+<details><summary>Question 22 : Get the details of the payments of classic cars.</summary>
   
   ## QUERY : 
 ``` 
+        SELECT payments.*, products.product_line FROM payments
+        LEFT JOIN customers ON customers.customer_id=payments.customer_id
+        RIGHT JOIN orders ON orders.customer_id=customers.customer_id
+        LEFT JOIN orderdetails ON orders.order_id=orderdetails.order_id
+        LEFT JOIN products ON products.product_code=orderdetails.product_code
+        WHERE products.product_line='Classic Cars' Group BY customers.customer_id;
 
 ```
 
 ## RESULT 
 ```
++-------------+--------------+--------------+-----------+--------------+
+| customer_id | check_number | payment_date | amount    | product_line |
++-------------+--------------+--------------+-----------+--------------+
+|         121 | DB889831     | 2017-02-16   |  50218.95 | Classic Cars |
+|         144 | IR846303     | 2018-12-12   |  36005.71 | Classic Cars |
+|         458 | DD995006     | 2018-11-15   |  33145.56 | Classic Cars |
+|         161 | BR352384     | 2018-11-14   |   2434.25 | Classic Cars |
+|         148 | BI507030     | 2017-04-22   |  44380.15 | Classic Cars |
+|         424 | KF480160     | 2018-12-07   |  25505.98 | Classic Cars |
+|         333 | HL209210     | 2017-11-15   |  23936.53 | Classic Cars |
+|         339 | AP286625     | 2018-10-24   |  23333.06 | Classic Cars |
+|         146 | FP549817     | 2018-03-18   |  40978.53 | Classic Cars |
+|         202 | HI358554     | 2017-12-18   |  36527.61 | Classic Cars |
+|         475 | JP113227     | 2017-12-09   |   7678.25 | Classic Cars |
+|         173 | GP545698     | 2018-05-13   |  11843.45 | Classic Cars |
+|         455 | HA777606     | 2017-12-05   |  38139.18 | Classic Cars |
+|         398 | AJ478695     | 2019-02-14   |  33967.73 | Classic Cars |
+|         282 | IA793562     | 2017-08-03   |  24013.52 | Classic Cars |
+|         249 | IJ399820     | 2018-09-19   |  33924.24 | Classic Cars |
+|         448 | FS299615     | 2019-04-18   |  27966.54 | Classic Cars |
+|         256 | EP227123     | 2018-02-10   |   5759.42 | Classic Cars |
+|         124 | AE215433     | 2019-03-05   | 101244.59 | Classic Cars |
+|         363 | HL575273     | 2018-11-17   |  50799.69 | Classic Cars |
+|         129 | DM826140     | 2018-12-08   |  26248.78 | Classic Cars |
+|         114 | GG31455      | 2017-05-20   |  45864.03 | Classic Cars |
+|         379 | CA762595     | 2019-02-12   |  28322.83 | Classic Cars |
+|         321 | DJ15149      | 2017-11-03   |  85559.12 | Classic Cars |
+|         276 | EM979878     | 2019-02-09   |  27083.78 | Classic Cars |
+|         233 | BOFA23232    | 2019-05-20   |  29070.38 | Classic Cars |
+|         141 | AU364101     | 2017-07-19   |  36251.03 | Classic Cars |
+|         145 | CN328545     | 2018-07-03   |   4710.73 | Classic Cars |
+|         382 | CC871084     | 2017-05-12   |  35826.33 | Classic Cars |
+|         324 | DQ409197     | 2018-12-13   |  13671.82 | Classic Cars |
+|         320 | GJ597719     | 2019-01-18   |   8307.28 | Classic Cars |
+|         186 | AE192287     | 2019-03-10   |  23602.90 | Classic Cars |
+|         242 | AF40894      | 2017-11-22   |  33818.34 | Classic Cars |
+|         489 | OC773849     | 2017-12-04   |  22275.73 | Classic Cars |
+|         216 | BG407567     | 2017-05-09   |   3101.40 | Classic Cars |
+|         347 | DG700707     | 2018-01-18   |  21053.69 | Classic Cars |
+|         239 | NQ865547     | 2018-03-15   |  80375.24 | Classic Cars |
+|         412 | GH197075     | 2018-07-25   |  35034.57 | Classic Cars |
+|         131 | CL442705     | 2017-03-12   |  22292.62 | Classic Cars |
+|         314 | LQ244073     | 2018-08-09   |  45352.47 | Classic Cars |
+|         260 | IO164641     | 2018-08-30   |  37527.58 | Classic Cars |
+|         362 | FP170292     | 2018-07-11   |  18473.71 | Classic Cars |
+|         240 | IF245157     | 2018-11-16   |  46788.14 | Classic Cars |
+|         353 | CO351193     | 2019-01-10   |  49705.52 | Classic Cars |
+|         311 | DG336041     | 2019-02-15   |  46770.52 | Classic Cars |
+|         250 | EQ12267      | 2019-05-17   |  17928.09 | Classic Cars |
+|         450 | EF485824     | 2018-06-21   |  59551.38 | Classic Cars |
+|         172 | AD832091     | 2018-09-09   |   1960.80 | Classic Cars |
+|         452 | ED473873     | 2017-11-15   |  27121.90 | Classic Cars |
+|         495 | BH167026     | 2017-12-26   |  59265.14 | Classic Cars |
+|         166 | BQ327613     | 2018-09-16   |  38785.48 | Classic Cars |
+|         157 | HI618861     | 2018-11-19   |  35152.12 | Classic Cars |
+|         286 | DR578578     | 2018-10-28   |  47411.33 | Classic Cars |
+|         119 | DB933704     | 2018-11-14   |  19501.82 | Classic Cars |
+|         385 | BN347084     | 2017-12-02   |  20644.24 | Classic Cars |
+|         350 | BQ602907     | 2018-12-11   |  18888.31 | Classic Cars |
+|         167 | ED743615     | 2018-09-19   |  12538.01 | Classic Cars |
+|         259 | EU280955     | 2018-11-06   |  61234.67 | Classic Cars |
+|         406 | BJMPR4545    | 2019-04-23   |  12190.85 | Classic Cars |
+|         298 | AJ574927     | 2018-03-13   |  47375.92 | Classic Cars |
+|         201 | DP677013     | 2017-10-20   |  23908.24 | Classic Cars |
+|         386 | DO106109     | 2017-11-18   |  38524.29 | Classic Cars |
+|         204 | GC697638     | 2018-08-13   |  51152.86 | Classic Cars |
+|         128 | DI925118     | 2017-01-28   |  10549.01 | Classic Cars |
+|         323 | AL493079     | 2019-05-23   |  75020.13 | Classic Cars |
+|         334 | CS435306     | 2019-01-27   |  45785.34 | Classic Cars |
+|         151 | BF686658     | 2017-12-22   |  58793.53 | Classic Cars |
+|         189 | BO711618     | 2018-10-03   |  17359.53 | Classic Cars |
+|         344 | AF246722     | 2017-11-24   |  31428.21 | Classic Cars |
+|         357 | AG240323     | 2017-12-16   |  20220.04 | Classic Cars |
+|         187 | AM968797     | 2018-11-03   |  52825.29 | Classic Cars |
+|         227 | MQ413968     | 2017-10-31   |  36164.46 | Classic Cars |
+|         175 | CITI3434344  | 2019-05-19   |  28500.78 | Classic Cars |
+|         181 | CM564612     | 2018-04-25   |  22602.36 | Classic Cars |
+|         496 | EU531600     | 2019-05-25   |  30253.75 | Classic Cars |
+|         219 | BN17870      | 2019-03-02   |   3452.75 | Classic Cars |
+|         462 | ED203908     | 2019-04-15   |  30293.77 | Classic Cars |
+|         209 | BOAF82044    | 2019-05-03   |  35157.75 | Classic Cars |
+|         486 | BL66528      | 2018-04-14   |   5899.38 | Classic Cars |
+|         177 | AU750837     | 2018-04-17   |  15183.63 | Classic Cars |
+|         112 | BO864823     | 2018-12-17   |  14191.12 | Classic Cars |
+|         299 | AD304085     | 2017-10-24   |  36798.88 | Classic Cars |
+|         103 | HQ336336     | 2018-10-19   |   6066.78 | Classic Cars |
+|         205 | GL756480     | 2017-12-04   |   3879.96 | Classic Cars |
+|         381 | BC726082     | 2018-12-03   |  12081.52 | Classic Cars |
+|         484 | GK294076     | 2018-10-26   |   3474.66 | Classic Cars |
+|         319 | HL685576     | 2018-11-06   |  42339.76 | Classic Cars |
+|         487 | AH612904     | 2017-09-28   |  29997.09 | Classic Cars |
+|         473 | LL427009     | 2018-02-17   |   7612.06 | Classic Cars |
+|         471 | AB661578     | 2018-07-28   |   9415.13 | Classic Cars |
+|         456 | GJ715659     | 2018-11-13   |  27550.51 | Classic Cars |
+|         447 | AO757239     | 2017-09-15   |   6631.36 | Classic Cars |
+|         171 | GB878038     | 2018-03-15   |  18997.89 | Classic Cars |
+|         278 | BJ483870     | 2018-12-05   |  37654.09 | Classic Cars |
++-------------+--------------+--------------+-----------+--------------+
+94 rows in set (0.01 sec)
 
 ```
 </details>
