@@ -2257,15 +2257,29 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 18 : </summary>
+<details><summary>Question 18 : The customer (id:496) made a new order today and the details are as follows:
+Order id: 10426
+Product Code: S12_3148
+Quantity: 41
+Each price: 151
+Order line number: 11
+Required date: '<today date>'
+Required date: 10 day from today
+Status: In Process
+</summary>
   
   ## QUERY : 
 ``` 
+        INSERT INTO orders(order_id,order_date,required_date,status,customer_id) VALUE(10426,'2022-12-31','2023-01-10','In Process',496);
+        INSERT INTO orderdetails(order_id,product_code,quantity_ordered,each_price,order_line_number) VALUE(10426,'S12_3148',41,151,11);
 
 ```
 
 ## RESULT 
 ```
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
 
 ```
 </details>
