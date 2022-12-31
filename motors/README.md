@@ -2146,15 +2146,24 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
 
-<details><summary>Question 14 : </summary>
+<details><summary>Question 14 : Get the details of the customer who made the maximum payment.</summary>
   
   ## QUERY : 
 ``` 
+        SELECT customers.* FROM customers
+        INNER JOIN payments ON customers.customer_id=customers.customer_id
+        ORDER BY payments.amount DESC LIMIT 1;
 
 ```
 
 ## RESULT 
 ```
++-------------+-------------------+-----------+------------+------------+----------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+| customer_id | customer_name     | last_name | first_name | phone      | address_line1  | address_line2 | city   | state | postal_code | country | sales_employee_id | credit_limit |
++-------------+-------------------+-----------+------------+------------+----------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+|         103 | Atelier graphique | Schmitt   | Carine     | 40.32.2555 | 54, rue Royale | NULL          | Nantes | NULL  | 44000       | France  |              1370 |     21000.00 |
++-------------+-------------------+-----------+------------+------------+----------------+---------------+--------+-------+-------------+---------+-------------------+--------------+
+1 row in set (0.03 sec)
 
 ```
 </details>
