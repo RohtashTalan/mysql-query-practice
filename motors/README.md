@@ -2270,7 +2270,7 @@ Status: In Process
   
   ## QUERY : 
 ``` 
-        INSERT INTO orders(order_id,order_date,required_date,status,customer_id) VALUE(10426,'2022-12-31','2023-01-10','In Process',496);
+           INSERT INTO orders(order_id,order_date,required_date,status,customer_id) VALUE(10426,CURRENT_DATE(),(CURRENT_DATE()+INTERVAL 10 DAY),'In Process',496);
         INSERT INTO orderdetails(order_id,product_code,quantity_ordered,each_price,order_line_number) VALUE(10426,'S12_3148',41,151,11);
 
 ```
