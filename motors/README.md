@@ -2347,16 +2347,28 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 21 : </summary>
+<details><summary>Question 21 : Get the address of the office of the employees that reports to the employee whose id is 1102.</summary>
   
   ## QUERY : 
 ``` 
-
+        SELECT employees.employee_id, CONCAT(employees.first_name, ' ', employees.last_name) AS employees_name, offices.* FROM offices
+        INNER JOIN employees ON employees.office_code=offices.office_code
+        WHERE employees.reports_to=1102;
 ```
 
 ## RESULT 
 ```
-
++-------------+------------------+-------------+--------+------------------+--------------------------+---------------+-------+---------+-------------+-----------+
+| employee_id | employees_name   | office_code | city   | phone            | address_line1            | address_line2 | state | country | postal_code | territory |
++-------------+------------------+-------------+--------+------------------+--------------------------+---------------+-------+---------+-------------+-----------+
+|        1337 | Loui Bondur      | 4           | Paris  | +33 14 723 4404  | 43 Rue Jouffroy D'abbans | NULL          | NULL  | France  | 75017       | EMEA      |
+|        1370 | Gerard Hernandez | 4           | Paris  | +33 14 723 4404  | 43 Rue Jouffroy D'abbans | NULL          | NULL  | France  | 75017       | EMEA      |
+|        1401 | Pamela Castillo  | 4           | Paris  | +33 14 723 4404  | 43 Rue Jouffroy D'abbans | NULL          | NULL  | France  | 75017       | EMEA      |
+|        1501 | Larry Bott       | 7           | London | +44 20 7877 2041 | 25 Old Broad Street      | Level 7       | NULL  | UK      | EC2N 1HN    | EMEA      |
+|        1504 | Barry Jones      | 7           | London | +44 20 7877 2041 | 25 Old Broad Street      | Level 7       | NULL  | UK      | EC2N 1HN    | EMEA      |
+|        1702 | Martin Gerard    | 4           | Paris  | +33 14 723 4404  | 43 Rue Jouffroy D'abbans | NULL          | NULL  | France  | 75017       | EMEA      |
++-------------+------------------+-------------+--------+------------------+--------------------------+---------------+-------+---------+-------------+-----------+
+6 rows in set (0.00 sec)
 ```
 </details>
 
