@@ -2210,9 +2210,9 @@ Rows matched: 1  Changed: 1  Warnings: 0
   
   ## QUERY : 
 ``` 
-        SELECT COUNT(*) FROM orders
+       SELECT COUNT(*) FROM orders
         INNER JOIN customers ON customers.customer_id=orders.customer_id
-        WHERE customers.country='Belgium' AND  YEAR(orders.shipped_date) ='2018';
+        WHERE customers.country='Belgium' AND  YEAR(orders.shipped_date) ='2018' AND orders.status='Shipped';
 ```
 
 ## RESULT 
