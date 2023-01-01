@@ -2915,7 +2915,7 @@ Query OK, 1 row affected (0.02 sec)
 ``` 
 
         SELECT orderdetails.each_price, COUNT(orderdetails.each_price*orderdetails.quantity_ordered) FROM orderdetails INNER JOIN products ON products.product_code=orderdetails.product_code WHERE products.product_line='planes';
-        
+
 ```
 
 ## RESULT 
@@ -2934,15 +2934,23 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 28 : </summary>
+<details><summary>Question 28 : How many customers belong to France?</summary>
   
   ## QUERY : 
 ``` 
 
+        SELECT COUNT(*) FROM customers WHERE country='France';
+        
 ```
 
 ## RESULT 
 ```
++----------+
+| COUNT(*) |
++----------+
+|       12 |
++----------+
+1 row in set (0.00 sec)
 
 ```
 </details>
