@@ -2857,7 +2857,7 @@ Query OK, 1 row affected (0.02 sec)
    SELECT employees.*, offices.* FROM offices
         INNER JOIN employees ON employees.office_code=offices.office_code
         WHERE offices.country='USA';
-        
+
 ```
 
 ## RESULT 
@@ -2885,15 +2885,22 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 26 : </summary>
+<details><summary>Question 26 : Fetch total price of each order of motorcycles. (Hint: quantity x price for each record).</summary>
   
   ## QUERY : 
 ``` 
-
+ SELECT orderdetails.each_price, COUNT(orderdetails.each_price*orderdetails.quantity_ordered) FROM orderdetails INNER JOIN products ON products.product_code=orderdetails.product_code WHERE products.product_line='Motorcycles';
+ 
 ```
 
 ## RESULT 
 ```
++------------+--------------------------------------------------------------+
+| each_price | COUNT(orderdetails.each_price*orderdetails.quantity_ordered) |
++------------+--------------------------------------------------------------+
+|      81.35 |                                                          359 |
++------------+--------------------------------------------------------------+
+1 row in set (0.01 sec)
 
 ```
 </details>
