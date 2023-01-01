@@ -2523,15 +2523,325 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 24 : </summary>
+<details><summary>Question 24 : Get the comments regarding resolved orders.</summary>
   
   ## QUERY : 
 ``` 
+
+        SELECT order_id, comments, status FROM orders WHERE status='Shipped';
 
 ```
 
 ## RESULT 
 ```
++----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| order_id | comments                                                                                                                                                      | status  |
++----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+|    10100 | NULL                                                                                                                                                          | Shipped |
+|    10101 | Check on availability.                                                                                                                                        | Shipped |
+|    10102 | NULL                                                                                                                                                          | Shipped |
+|    10103 | NULL                                                                                                                                                          | Shipped |
+|    10104 | NULL                                                                                                                                                          | Shipped |
+|    10105 | NULL                                                                                                                                                          | Shipped |
+|    10106 | NULL                                                                                                                                                          | Shipped |
+|    10107 | Difficult to negotiate with customer. We need more marketing materials                                                                                        | Shipped |
+|    10108 | NULL                                                                                                                                                          | Shipped |
+|    10109 | Customer requested that FedEx Ground is used for this shipping                                                                                                | Shipped |
+|    10110 | NULL                                                                                                                                                          | Shipped |
+|    10111 | NULL                                                                                                                                                          | Shipped |
+|    10112 | Customer requested that ad materials (such as posters, pamphlets) be included in the shippment                                                                | Shipped |
+|    10113 | NULL                                                                                                                                                          | Shipped |
+|    10114 | NULL                                                                                                                                                          | Shipped |
+|    10115 | NULL                                                                                                                                                          | Shipped |
+|    10116 | NULL                                                                                                                                                          | Shipped |
+|    10117 | NULL                                                                                                                                                          | Shipped |
+|    10118 | Customer has worked with some of our vendors in the past and is aware of their mrp                                                                            | Shipped |
+|    10119 | NULL                                                                                                                                                          | Shipped |
+|    10120 | NULL                                                                                                                                                          | Shipped |
+|    10121 | NULL                                                                                                                                                          | Shipped |
+|    10122 | NULL                                                                                                                                                          | Shipped |
+|    10123 | NULL                                                                                                                                                          | Shipped |
+|    10124 | Customer very concerned about the exact color of the models. There is high risk that he may dispute the order because there is a slight color mismatch        | Shipped |
+|    10125 | NULL                                                                                                                                                          | Shipped |
+|    10126 | NULL                                                                                                                                                          | Shipped |
+|    10127 | Customer requested special shippment. The instructions were passed along to the warehouse                                                                     | Shipped |
+|    10128 | NULL                                                                                                                                                          | Shipped |
+|    10129 | NULL                                                                                                                                                          | Shipped |
+|    10130 | NULL                                                                                                                                                          | Shipped |
+|    10131 | NULL                                                                                                                                                          | Shipped |
+|    10132 | NULL                                                                                                                                                          | Shipped |
+|    10133 | NULL                                                                                                                                                          | Shipped |
+|    10134 | NULL                                                                                                                                                          | Shipped |
+|    10135 | NULL                                                                                                                                                          | Shipped |
+|    10136 | Customer is interested in buying more Ferrari models                                                                                                          | Shipped |
+|    10137 | NULL                                                                                                                                                          | Shipped |
+|    10138 | NULL                                                                                                                                                          | Shipped |
+|    10139 | NULL                                                                                                                                                          | Shipped |
+|    10140 | NULL                                                                                                                                                          | Shipped |
+|    10141 | NULL                                                                                                                                                          | Shipped |
+|    10142 | NULL                                                                                                                                                          | Shipped |
+|    10143 | Can we deliver the new Ford Mustang models by end-of-quarter?                                                                                                 | Shipped |
+|    10144 | NULL                                                                                                                                                          | Shipped |
+|    10145 | NULL                                                                                                                                                          | Shipped |
+|    10146 | NULL                                                                                                                                                          | Shipped |
+|    10147 | NULL                                                                                                                                                          | Shipped |
+|    10148 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10149 | NULL                                                                                                                                                          | Shipped |
+|    10150 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10151 | NULL                                                                                                                                                          | Shipped |
+|    10152 | NULL                                                                                                                                                          | Shipped |
+|    10153 | NULL                                                                                                                                                          | Shipped |
+|    10154 | NULL                                                                                                                                                          | Shipped |
+|    10155 | NULL                                                                                                                                                          | Shipped |
+|    10156 | NULL                                                                                                                                                          | Shipped |
+|    10157 | NULL                                                                                                                                                          | Shipped |
+|    10158 | NULL                                                                                                                                                          | Shipped |
+|    10159 | NULL                                                                                                                                                          | Shipped |
+|    10160 | NULL                                                                                                                                                          | Shipped |
+|    10161 | NULL                                                                                                                                                          | Shipped |
+|    10162 | NULL                                                                                                                                                          | Shipped |
+|    10163 | NULL                                                                                                                                                          | Shipped |
+|    10165 | This order was on hold because customers's credit limit had been exceeded. Order will ship when payment is received                                           | Shipped |
+|    10166 | NULL                                                                                                                                                          | Shipped |
+|    10168 | NULL                                                                                                                                                          | Shipped |
+|    10169 | NULL                                                                                                                                                          | Shipped |
+|    10170 | NULL                                                                                                                                                          | Shipped |
+|    10171 | NULL                                                                                                                                                          | Shipped |
+|    10172 | NULL                                                                                                                                                          | Shipped |
+|    10173 | Cautious optimism. We have happy customers here, if we can keep them well stocked.  I need all the information I can get on the planned shippments of Porches | Shipped |
+|    10174 | NULL                                                                                                                                                          | Shipped |
+|    10175 | NULL                                                                                                                                                          | Shipped |
+|    10176 | NULL                                                                                                                                                          | Shipped |
+|    10177 | NULL                                                                                                                                                          | Shipped |
+|    10178 | Custom shipping instructions sent to warehouse                                                                                                                | Shipped |
+|    10180 | NULL                                                                                                                                                          | Shipped |
+|    10181 | NULL                                                                                                                                                          | Shipped |
+|    10182 | NULL                                                                                                                                                          | Shipped |
+|    10183 | We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.                                                   | Shipped |
+|    10184 | NULL                                                                                                                                                          | Shipped |
+|    10185 | NULL                                                                                                                                                          | Shipped |
+|    10186 | They want to reevaluate their terms agreement with the VP of Sales                                                                                            | Shipped |
+|    10187 | NULL                                                                                                                                                          | Shipped |
+|    10188 | NULL                                                                                                                                                          | Shipped |
+|    10189 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10190 | NULL                                                                                                                                                          | Shipped |
+|    10191 | We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.                                                              | Shipped |
+|    10192 | NULL                                                                                                                                                          | Shipped |
+|    10193 | NULL                                                                                                                                                          | Shipped |
+|    10194 | NULL                                                                                                                                                          | Shipped |
+|    10195 | NULL                                                                                                                                                          | Shipped |
+|    10196 | NULL                                                                                                                                                          | Shipped |
+|    10197 | Customer inquired about remote controlled models and gold models.                                                                                             | Shipped |
+|    10198 | NULL                                                                                                                                                          | Shipped |
+|    10199 | NULL                                                                                                                                                          | Shipped |
+|    10200 | NULL                                                                                                                                                          | Shipped |
+|    10201 | NULL                                                                                                                                                          | Shipped |
+|    10202 | NULL                                                                                                                                                          | Shipped |
+|    10203 | NULL                                                                                                                                                          | Shipped |
+|    10204 | NULL                                                                                                                                                          | Shipped |
+|    10205 |  I need all the information I can get on our competitors.                                                                                                     | Shipped |
+|    10206 | Can we renegotiate this one?                                                                                                                                  | Shipped |
+|    10207 | Check on availability.                                                                                                                                        | Shipped |
+|    10208 | NULL                                                                                                                                                          | Shipped |
+|    10209 | NULL                                                                                                                                                          | Shipped |
+|    10210 | NULL                                                                                                                                                          | Shipped |
+|    10211 | NULL                                                                                                                                                          | Shipped |
+|    10212 | NULL                                                                                                                                                          | Shipped |
+|    10213 | Difficult to negotiate with customer. We need more marketing materials                                                                                        | Shipped |
+|    10214 | NULL                                                                                                                                                          | Shipped |
+|    10215 | Customer requested that FedEx Ground is used for this shipping                                                                                                | Shipped |
+|    10216 | NULL                                                                                                                                                          | Shipped |
+|    10217 | NULL                                                                                                                                                          | Shipped |
+|    10218 | Customer requested that ad materials (such as posters, pamphlets) be included in the shippment                                                                | Shipped |
+|    10219 | NULL                                                                                                                                                          | Shipped |
+|    10220 | NULL                                                                                                                                                          | Shipped |
+|    10221 | NULL                                                                                                                                                          | Shipped |
+|    10222 | NULL                                                                                                                                                          | Shipped |
+|    10223 | NULL                                                                                                                                                          | Shipped |
+|    10224 | Customer has worked with some of our vendors in the past and is aware of their mrp                                                                            | Shipped |
+|    10225 | NULL                                                                                                                                                          | Shipped |
+|    10226 | NULL                                                                                                                                                          | Shipped |
+|    10227 | NULL                                                                                                                                                          | Shipped |
+|    10228 | NULL                                                                                                                                                          | Shipped |
+|    10229 | NULL                                                                                                                                                          | Shipped |
+|    10230 | Customer very concerned about the exact color of the models. There is high risk that he may dispute the order because there is a slight color mismatch        | Shipped |
+|    10231 | NULL                                                                                                                                                          | Shipped |
+|    10232 | NULL                                                                                                                                                          | Shipped |
+|    10233 | Customer requested special shippment. The instructions were passed along to the warehouse                                                                     | Shipped |
+|    10234 | NULL                                                                                                                                                          | Shipped |
+|    10235 | NULL                                                                                                                                                          | Shipped |
+|    10236 | NULL                                                                                                                                                          | Shipped |
+|    10237 | NULL                                                                                                                                                          | Shipped |
+|    10238 | NULL                                                                                                                                                          | Shipped |
+|    10239 | NULL                                                                                                                                                          | Shipped |
+|    10240 | NULL                                                                                                                                                          | Shipped |
+|    10241 | NULL                                                                                                                                                          | Shipped |
+|    10242 | Customer is interested in buying more Ferrari models                                                                                                          | Shipped |
+|    10243 | NULL                                                                                                                                                          | Shipped |
+|    10244 | NULL                                                                                                                                                          | Shipped |
+|    10245 | NULL                                                                                                                                                          | Shipped |
+|    10246 | NULL                                                                                                                                                          | Shipped |
+|    10247 | NULL                                                                                                                                                          | Shipped |
+|    10249 | Can we deliver the new Ford Mustang models by end-of-quarter?                                                                                                 | Shipped |
+|    10250 | NULL                                                                                                                                                          | Shipped |
+|    10251 | NULL                                                                                                                                                          | Shipped |
+|    10252 | NULL                                                                                                                                                          | Shipped |
+|    10254 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10255 | NULL                                                                                                                                                          | Shipped |
+|    10256 | NULL                                                                                                                                                          | Shipped |
+|    10257 | NULL                                                                                                                                                          | Shipped |
+|    10258 | NULL                                                                                                                                                          | Shipped |
+|    10259 | NULL                                                                                                                                                          | Shipped |
+|    10261 | NULL                                                                                                                                                          | Shipped |
+|    10263 | NULL                                                                                                                                                          | Shipped |
+|    10264 | Customer will send a truck to our local warehouse on 7/1/2018                                                                                                 | Shipped |
+|    10265 | NULL                                                                                                                                                          | Shipped |
+|    10266 | NULL                                                                                                                                                          | Shipped |
+|    10267 | NULL                                                                                                                                                          | Shipped |
+|    10268 | NULL                                                                                                                                                          | Shipped |
+|    10269 | NULL                                                                                                                                                          | Shipped |
+|    10270 | Can we renegotiate this one?                                                                                                                                  | Shipped |
+|    10271 | NULL                                                                                                                                                          | Shipped |
+|    10272 | NULL                                                                                                                                                          | Shipped |
+|    10273 | NULL                                                                                                                                                          | Shipped |
+|    10274 | NULL                                                                                                                                                          | Shipped |
+|    10275 | NULL                                                                                                                                                          | Shipped |
+|    10276 | NULL                                                                                                                                                          | Shipped |
+|    10277 | NULL                                                                                                                                                          | Shipped |
+|    10278 | NULL                                                                                                                                                          | Shipped |
+|    10279 | Cautious optimism. We have happy customers here, if we can keep them well stocked.  I need all the information I can get on the planned shippments of Porches | Shipped |
+|    10280 | NULL                                                                                                                                                          | Shipped |
+|    10281 | NULL                                                                                                                                                          | Shipped |
+|    10282 | NULL                                                                                                                                                          | Shipped |
+|    10283 | NULL                                                                                                                                                          | Shipped |
+|    10284 | Custom shipping instructions sent to warehouse                                                                                                                | Shipped |
+|    10285 | NULL                                                                                                                                                          | Shipped |
+|    10286 | NULL                                                                                                                                                          | Shipped |
+|    10287 | NULL                                                                                                                                                          | Shipped |
+|    10288 | NULL                                                                                                                                                          | Shipped |
+|    10289 | We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.                                                   | Shipped |
+|    10290 | NULL                                                                                                                                                          | Shipped |
+|    10291 | NULL                                                                                                                                                          | Shipped |
+|    10292 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10293 | NULL                                                                                                                                                          | Shipped |
+|    10294 | NULL                                                                                                                                                          | Shipped |
+|    10295 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10296 | NULL                                                                                                                                                          | Shipped |
+|    10297 | We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.                                                              | Shipped |
+|    10298 | NULL                                                                                                                                                          | Shipped |
+|    10299 | NULL                                                                                                                                                          | Shipped |
+|    10300 | NULL                                                                                                                                                          | Shipped |
+|    10301 | NULL                                                                                                                                                          | Shipped |
+|    10302 | NULL                                                                                                                                                          | Shipped |
+|    10303 | Customer inquired about remote controlled models and gold models.                                                                                             | Shipped |
+|    10304 | NULL                                                                                                                                                          | Shipped |
+|    10305 | Check on availability.                                                                                                                                        | Shipped |
+|    10306 | NULL                                                                                                                                                          | Shipped |
+|    10307 | NULL                                                                                                                                                          | Shipped |
+|    10308 | Customer requested that FedEx Ground is used for this shipping                                                                                                | Shipped |
+|    10309 | NULL                                                                                                                                                          | Shipped |
+|    10310 | NULL                                                                                                                                                          | Shipped |
+|    10311 | Difficult to negotiate with customer. We need more marketing materials                                                                                        | Shipped |
+|    10312 | NULL                                                                                                                                                          | Shipped |
+|    10313 | Customer requested that FedEx Ground is used for this shipping                                                                                                | Shipped |
+|    10314 | NULL                                                                                                                                                          | Shipped |
+|    10315 | NULL                                                                                                                                                          | Shipped |
+|    10316 | Customer requested that ad materials (such as posters, pamphlets) be included in the shippment                                                                | Shipped |
+|    10317 | NULL                                                                                                                                                          | Shipped |
+|    10318 | NULL                                                                                                                                                          | Shipped |
+|    10319 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10320 | NULL                                                                                                                                                          | Shipped |
+|    10321 | NULL                                                                                                                                                          | Shipped |
+|    10322 | Customer has worked with some of our vendors in the past and is aware of their mrp                                                                            | Shipped |
+|    10323 | NULL                                                                                                                                                          | Shipped |
+|    10324 | NULL                                                                                                                                                          | Shipped |
+|    10325 | NULL                                                                                                                                                          | Shipped |
+|    10326 | NULL                                                                                                                                                          | Shipped |
+|    10328 | Customer very concerned about the exact color of the models. There is high risk that he may dispute the order because there is a slight color mismatch        | Shipped |
+|    10329 | NULL                                                                                                                                                          | Shipped |
+|    10330 | NULL                                                                                                                                                          | Shipped |
+|    10331 | Customer requested special shippment. The instructions were passed along to the warehouse                                                                     | Shipped |
+|    10332 | NULL                                                                                                                                                          | Shipped |
+|    10333 | NULL                                                                                                                                                          | Shipped |
+|    10335 | NULL                                                                                                                                                          | Shipped |
+|    10336 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10337 | NULL                                                                                                                                                          | Shipped |
+|    10338 | NULL                                                                                                                                                          | Shipped |
+|    10339 | NULL                                                                                                                                                          | Shipped |
+|    10340 | Customer is interested in buying more Ferrari models                                                                                                          | Shipped |
+|    10341 | NULL                                                                                                                                                          | Shipped |
+|    10342 | NULL                                                                                                                                                          | Shipped |
+|    10343 | NULL                                                                                                                                                          | Shipped |
+|    10344 | NULL                                                                                                                                                          | Shipped |
+|    10345 | NULL                                                                                                                                                          | Shipped |
+|    10346 | NULL                                                                                                                                                          | Shipped |
+|    10347 | Can we deliver the new Ford Mustang models by end-of-quarter?                                                                                                 | Shipped |
+|    10348 | NULL                                                                                                                                                          | Shipped |
+|    10349 | NULL                                                                                                                                                          | Shipped |
+|    10350 | NULL                                                                                                                                                          | Shipped |
+|    10351 | NULL                                                                                                                                                          | Shipped |
+|    10352 | NULL                                                                                                                                                          | Shipped |
+|    10353 | NULL                                                                                                                                                          | Shipped |
+|    10354 | NULL                                                                                                                                                          | Shipped |
+|    10355 | NULL                                                                                                                                                          | Shipped |
+|    10356 | NULL                                                                                                                                                          | Shipped |
+|    10357 | NULL                                                                                                                                                          | Shipped |
+|    10358 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10359 | NULL                                                                                                                                                          | Shipped |
+|    10360 | NULL                                                                                                                                                          | Shipped |
+|    10361 | NULL                                                                                                                                                          | Shipped |
+|    10362 | NULL                                                                                                                                                          | Shipped |
+|    10363 | NULL                                                                                                                                                          | Shipped |
+|    10364 | NULL                                                                                                                                                          | Shipped |
+|    10365 | NULL                                                                                                                                                          | Shipped |
+|    10366 | NULL                                                                                                                                                          | Shipped |
+|    10368 | Can we renegotiate this one?                                                                                                                                  | Shipped |
+|    10369 | NULL                                                                                                                                                          | Shipped |
+|    10370 | NULL                                                                                                                                                          | Shipped |
+|    10371 | NULL                                                                                                                                                          | Shipped |
+|    10372 | NULL                                                                                                                                                          | Shipped |
+|    10373 | NULL                                                                                                                                                          | Shipped |
+|    10374 | NULL                                                                                                                                                          | Shipped |
+|    10375 | NULL                                                                                                                                                          | Shipped |
+|    10376 | NULL                                                                                                                                                          | Shipped |
+|    10377 | Cautious optimism. We have happy customers here, if we can keep them well stocked.  I need all the information I can get on the planned shippments of Porches | Shipped |
+|    10378 | NULL                                                                                                                                                          | Shipped |
+|    10379 | NULL                                                                                                                                                          | Shipped |
+|    10380 | NULL                                                                                                                                                          | Shipped |
+|    10381 | NULL                                                                                                                                                          | Shipped |
+|    10382 | Custom shipping instructions sent to warehouse                                                                                                                | Shipped |
+|    10383 | NULL                                                                                                                                                          | Shipped |
+|    10384 | NULL                                                                                                                                                          | Shipped |
+|    10385 | NULL                                                                                                                                                          | Shipped |
+|    10387 | We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.                                                   | Shipped |
+|    10388 | NULL                                                                                                                                                          | Shipped |
+|    10389 | NULL                                                                                                                                                          | Shipped |
+|    10390 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10391 | NULL                                                                                                                                                          | Shipped |
+|    10392 | NULL                                                                                                                                                          | Shipped |
+|    10393 | They want to reevaluate their terms agreement with Finance.                                                                                                   | Shipped |
+|    10394 | NULL                                                                                                                                                          | Shipped |
+|    10395 | We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.                                                              | Shipped |
+|    10396 | NULL                                                                                                                                                          | Shipped |
+|    10397 | NULL                                                                                                                                                          | Shipped |
+|    10398 | NULL                                                                                                                                                          | Shipped |
+|    10399 | NULL                                                                                                                                                          | Shipped |
+|    10400 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10402 | NULL                                                                                                                                                          | Shipped |
+|    10403 | NULL                                                                                                                                                          | Shipped |
+|    10404 | NULL                                                                                                                                                          | Shipped |
+|    10405 | NULL                                                                                                                                                          | Shipped |
+|    10408 | NULL                                                                                                                                                          | Shipped |
+|    10409 | NULL                                                                                                                                                          | Shipped |
+|    10410 | NULL                                                                                                                                                          | Shipped |
+|    10411 | NULL                                                                                                                                                          | Shipped |
+|    10412 | NULL                                                                                                                                                          | Shipped |
+|    10413 | Customer requested that DHL is used for this shipping                                                                                                         | Shipped |
+|    10416 | NULL                                                                                                                                                          | Shipped |
+|    10418 | NULL                                                                                                                                                          | Shipped |
+|    10419 | NULL                                                                                                                                                          | Shipped |
++----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+303 rows in set (0.00 sec)
 
 ```
 </details>
