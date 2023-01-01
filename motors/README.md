@@ -2890,7 +2890,7 @@ Query OK, 1 row affected (0.02 sec)
   ## QUERY : 
 ``` 
  SELECT orderdetails.each_price, COUNT(orderdetails.each_price*orderdetails.quantity_ordered) FROM orderdetails INNER JOIN products ON products.product_code=orderdetails.product_code WHERE products.product_line='Motorcycles';
- 
+
 ```
 
 ## RESULT 
@@ -2909,15 +2909,23 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 27 : </summary>
+<details><summary>Question 27 : Get the total worth of all planes ordered.</summary>
   
   ## QUERY : 
 ``` 
 
+        SELECT orderdetails.each_price, COUNT(orderdetails.each_price*orderdetails.quantity_ordered) FROM orderdetails INNER JOIN products ON products.product_code=orderdetails.product_code WHERE products.product_line='planes';
+        
 ```
 
 ## RESULT 
 ```
++------------+--------------------------------------------------------------+
+| each_price | COUNT(orderdetails.each_price*orderdetails.quantity_ordered) |
++------------+--------------------------------------------------------------+
+|     134.04 |                                                          336 |
++------------+--------------------------------------------------------------+
+1 row in set (0.00 sec)
 
 ```
 </details>
