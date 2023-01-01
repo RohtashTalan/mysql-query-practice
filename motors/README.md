@@ -2498,16 +2498,24 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 23 : </summary>
+<details><summary>Question 23 : How many customers ordered from the USA?</summary>
   
   ## QUERY : 
 ``` 
+    SELECT COUNT(*) FROM orders
+        INNER JOIN customers ON customers.customer_id=orders.customer_id;
+        WHERE customers.country='USA';
 
 ```
 
 ## RESULT 
 ```
-
++----------+
+| COUNT(*) |
++----------+
+|      327 |
++----------+
+1 row in set (0.00 sec)
 ```
 </details>
 
