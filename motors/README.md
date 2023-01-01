@@ -2850,15 +2850,33 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 25 : </summary>
+<details><summary>Question 25 : Fetch the details of employees/salesmen in the USA WITH OFFICE ADDRESSES.</summary>
   
   ## QUERY : 
 ``` 
-
+   SELECT employees.*, offices.* FROM offices
+        INNER JOIN employees ON employees.office_code=offices.office_code
+        WHERE offices.country='USA';
+        
 ```
 
 ## RESULT 
 ```
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+--------------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+| employee_id | last_name | first_name | extension | email                    | office_code | reports_to | job_title          | office_code | city          | phone           | address_line1        | address_line2 | state | country | postal_code | territory |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+--------------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+|        1002 | Murphy    | Diane      | x5800     | dmurphy@lcomotors.com    | 1           |       NULL | President          | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1056 | Patterson | Mary       | x4611     | mpatterso@lcomotors.com  | 1           |       1002 | VP Sales           | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1076 | Firrelli  | Jeff       | x9273     | jfirrelli@lcomotors.com  | 1           |       1002 | VP Marketing       | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1143 | Bow       | Anthony    | x5428     | abow@lcomotors.com       | 1           |       1056 | Sales Manager (NA) | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1165 | Jennings  | Leslie     | x3291     | ljennings@lcomotors.com  | 1           |       1143 | Sales Rep          | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1166 | Thompson  | Leslie     | x4065     | lthompson@lcomotors.com  | 1           |       1143 | Sales Rep          | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1188 | Firrelli  | Julie      | x2173     | jfirrelli@lcomotors.com  | 2           |       1143 | Sales Rep          | 2           | Boston        | +1 215 837 0825 | 1550 Court Place     | Suite 102     | MA    | USA     | 02107       | NA        |
+|        1216 | Patterson | Steve      | x4334     | spatterson@lcomotors.com | 2           |       1143 | Sales Rep          | 2           | Boston        | +1 215 837 0825 | 1550 Court Place     | Suite 102     | MA    | USA     | 02107       | NA        |
+|        1286 | Tseng     | Foon Yue   | x2248     | ftseng@lcomotors.com     | 3           |       1143 | Sales Rep          | 3           | NYC           | +1 212 555 3000 | 523 East 53rd Street | apt. 5A       | NY    | USA     | 10022       | NA        |
+|        1323 | Vanauf    | George     | x4102     | gvanauf@lcomotors.com    | 3           |       1143 | Sales Rep          | 3           | NYC           | +1 212 555 3000 | 523 East 53rd Street | apt. 5A       | NY    | USA     | 10022       | NA        |
++-------------+-----------+------------+-----------+--------------------------+-------------+------------+--------------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+10 rows in set (0.00 sec)
 
 ```
 </details>
