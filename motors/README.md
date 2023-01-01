@@ -3022,15 +3022,29 @@ Query OK, 1 row affected (0.02 sec)
 
 
 
-<details><summary>Question 30 : </summary>
+<details><summary>Question 30 : Get the office address of the employees/salesmen who report to employee 1143.</summary>
   
   ## QUERY : 
 ``` 
+        SELECT employees.employee_id, CONCAT(employees.first_name, ' ', employees.last_name) AS employees_name, offices.* FROM offices
+        INNER JOIN employees ON employees.office_code=offices.office_code
+        WHERE employees.reports_to=1143;
 
 ```
 
 ## RESULT 
 ```
++-------------+-----------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+| employee_id | employees_name  | office_code | city          | phone           | address_line1        | address_line2 | state | country | postal_code | territory |
++-------------+-----------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+|        1165 | Leslie Jennings | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1166 | Leslie Thompson | 1           | San Francisco | +1 650 219 4782 | 100 Market Street    | Suite 300     | CA    | USA     | 94080       | NA        |
+|        1188 | Julie Firrelli  | 2           | Boston        | +1 215 837 0825 | 1550 Court Place     | Suite 102     | MA    | USA     | 02107       | NA        |
+|        1216 | Steve Patterson | 2           | Boston        | +1 215 837 0825 | 1550 Court Place     | Suite 102     | MA    | USA     | 02107       | NA        |
+|        1286 | Foon Yue Tseng  | 3           | NYC           | +1 212 555 3000 | 523 East 53rd Street | apt. 5A       | NY    | USA     | 10022       | NA        |
+|        1323 | George Vanauf   | 3           | NYC           | +1 212 555 3000 | 523 East 53rd Street | apt. 5A       | NY    | USA     | 10022       | NA        |
++-------------+-----------------+-------------+---------------+-----------------+----------------------+---------------+-------+---------+-------------+-----------+
+6 rows in set (0.00 sec)
 
 ```
 </details>
